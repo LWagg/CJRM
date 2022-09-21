@@ -24,7 +24,7 @@ Como mencionei durante a aula: não se preocupe em entender 100% o que os comand
 Utilize os espaços entre os comentários abaixo para executar os códigos dos 
 exercícios. Inclusive o alert mencionado acima.
 */
-alert('Js is awesome!') // Alerta(pop up)
+// alert('Js is awesome!') 
 
 
 /*
@@ -47,7 +47,7 @@ const currentYear = 2022
 /*
 07 - Exiba as const "myBirthYear" e "currentYear", lado a lado, no console do browser.
 */
-//console.log(myBirthYear, currentYear)
+console.log(myBirthYear, currentYear)
 
 
 
@@ -80,7 +80,7 @@ Não se assuste com as crases e os cifrões. Conversaremos mais sobre operaçõe
 matemáticas e strings (textos) em breve =)
 */
 const ten = 10
-console.log(`Em ${currentYear + 10}, estarei com ${myAge + 10} anos.`)
+console.log(`Em ${currentYear + ten}, estarei com ${myAge + ten} anos.`)
 
 /*
 10 - Abra o site abaixo no browser e faça o seguinte:
