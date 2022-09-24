@@ -13,6 +13,11 @@
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 */
 
+const my3FavoriteTVShows = ['Supernatural', 'Two and a Half Man', 'Vikings']
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(', ')}`
+  .replace(', V', ' e V')
+//console.log(sentence)
+
 
 
 /*
@@ -22,6 +27,7 @@
     possui 3 itens.
 */
 
+//console.log(my3FavoriteTVShows.length == 3)
 
 
 /*
@@ -35,6 +41,8 @@
 */
 
 const randomTVShow = 'Watchmen'
+const isRandomTVShowIncluded = my3FavoriteTVShows.includes('Watchmen')
+//console.log(isRandomTVShowIncluded)
 
 /*
   04 - Comente o console.log() acima e:
@@ -47,6 +55,8 @@ const randomTVShow = 'Watchmen'
   "O tipo de dado que a const "isRandomTVShowIncluded" armazena é: TIPO_DE_DADO."
 */
 
+const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTVShowIncluded}`
+//console.log(typeSentence)
 
 
 /*
@@ -63,6 +73,9 @@ const randomTVShow = 'Watchmen'
   caracteres? BOOLEAN."
 */
 
+const haveTheNumber = 39
+console.log(`A string que a "typeSentence" armazena tem mais de ${haveTheNumber} 
+caracteres? ${String(typeSentence.length <= haveTheNumber)}`.replace('f', 'F'))
 
 
 /*
