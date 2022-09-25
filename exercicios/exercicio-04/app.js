@@ -74,8 +74,8 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
 */
 
 const haveTheNumber = 39
-console.log(`A string que a "typeSentence" armazena tem mais de ${haveTheNumber} 
-caracteres? ${String(typeSentence.length <= haveTheNumber)}`.replace('f', 'F'))
+//console.log(`A string que a "typeSentence" armazena tem mais de ${haveTheNumber} 
+//caracteres? ${String(typeSentence.length <= haveTheNumber)}`.replace('f', 'F'))
 
 
 /*
@@ -89,6 +89,8 @@ caracteres? ${String(typeSentence.length <= haveTheNumber)}`.replace('f', 'F'))
 */
 
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
+//console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
+
 
 /*
   07 - Comente o console.log() acima e:
@@ -98,6 +100,10 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
     em boolean.
   - Você sabe por que essa conversão resultou em true?
 */
+
+const crazyOperation = null + 1
+const crazyConvertion = Boolean(crazyOperation)
+//console.log(crazyConvertion) // RETORNA TRUE PQ O NULL TEM VALOR 0 EM OPERAÇÕES MATEMÁTICAS.
 
 
 
@@ -114,6 +120,11 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   é: BOOLEAN."
 */
 
+const ages = [31, 82, 61, 11]
+const agesSum = ages[0] + ages[2]
+const sum = 92
+console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a ${sum}. Essa afirmação é: ${agesSum <= sum}`)
+
 
 
 /*
@@ -125,6 +136,8 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   - Exiba a "isNotAString" no console.
 */
 
+const isNotAString = typeof randomTVShow !== 'string'
+console.log(isNotAString)
 
 
 /*
@@ -136,3 +149,4 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 */
 
 const evenNumbers = [0, 2, 4, 6, 8, 10]
+console.log(evenNumbers.indexOf(8) !== -1)
