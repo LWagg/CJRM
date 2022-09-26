@@ -24,6 +24,14 @@
 */
 
 const fruits = ['morango', 'banana', 'mamão']
+if (fruits.includes('abacaxi')) {
+  console.log('A string "abacaxi" existe no array fruits.')
+} else if (fruits.includes('pera')) {
+  console.log('A string "pera" existe no array fruits.')
+} else {
+  //console.log('Nem pera nem abacaxi existem no array "fruits".')
+}
+
 
 /*
   02
@@ -37,6 +45,18 @@ const fruits = ['morango', 'banana', 'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
+
+const hours = 17
+const isMorning = hours >= 6 && hours <= 11
+const isAfternoon = hours >= 12 && hours <= 17
+
+if (isMorning) {
+  console.log('Bom dia!')
+} else if (isAfternoon) {
+  console.log('Boa tarde!')
+} else {
+  console.log('Boa noite!')
+}
 
 /*
   03
@@ -52,6 +72,16 @@ const fruits = ['morango', 'banana', 'mamão']
     também está funcionando.
 */
 
+const age = 30
+const lessThan7 = age <= 7
+const moreThan65 = age >= 65
+
+if (lessThan7 || moreThan65) {
+  console.log("Para você, a entrada é grátis!")
+} else {
+  console.log("A entrada é R$ 30,00.")
+}
+
 /*
   04
 
@@ -62,6 +92,7 @@ const fruits = ['morango', 'banana', 'mamão']
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+
 
 /*
   05
