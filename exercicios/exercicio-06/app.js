@@ -165,15 +165,20 @@ let oddNumbers = []
 let evenNumbers = []
 
 for (let i = 0; i < randomNumbers.length; i++) {
-  const isAnEvenNumber = randomNumbers[i] %  2 == 0
-  const isRandomNumber = randomNumbers[i]
+  const number = randomNumbers[i]
+  const isAnEvenNumber = number %  2 == 0
+  
   
   if (isAnEvenNumber) {
-    evenNumbers.push(isRandomNumber)
+    evenNumbers.push(number)
   } else {
-    oddNumbers.push(isRandomNumber)
+    oddNumbers.push(number)
   }
 }
 
-console.log(`Numeros ímpares: ${oddNumbers.join(', ')
-  .replace(', 3', ' e 3')}. Números pares: ${evenNumbers.join(', ').replace(', 5',' e 5')}.`)
+const evenNumbersString = evenNumbers.join(', ').replace(', 5',' e 5')
+const oddNumbersString = oddNumbers.join(', ')
+.replace(', 3', ' e 3')
+
+console.log(`Numeros ímpares: ${oddNumbersString}. Números pares: ${evenNumbersString}.`)
+
