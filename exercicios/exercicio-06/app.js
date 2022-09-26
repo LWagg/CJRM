@@ -92,6 +92,16 @@ if (lessThan7 || moreThan65) {
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+const between11And90 = []
+for (i = 0; i < numbers.length; i++) {
+    const number = numbers[i]
+    const isNumberBetween11And90 = number >= 11 && number <= 90 
+
+    if (isNumberBetween11And90) {
+    between11And90.push(number)
+  }
+}
+//console.log(between11And90)
 
 
 /*
@@ -108,6 +118,30 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+
+let isNumber = 0
+let isBoolean = 0
+let isString = 0
+
+for (let i = 0; i < crazyArray.length; i++) {
+  const typeOfItem =  typeof crazyArray[i]
+  const isItemANumer =  typeOfItem  === 'number'
+  const isItemABoolean = typeOfItem === 'boolean'
+
+  if (isItemANumer ) {
+      isNumber++
+  } else if (isItemABoolean) {
+      isBoolean++
+  } else {
+      isString++ 
+  }
+}
+
+console.log(`O crazyArray tem ${isBoolean} booleans, ${isNumber} números e ${isString} strings.`)
+
+
+
+
 
 /*
   06
@@ -127,3 +161,19 @@ const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false
 */
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+let oddNumbers = []
+let evenNumbers = []
+
+for (let i = 0; i < randomNumbers.length; i++) {
+  const isAnEvenNumber = randomNumbers[i] %  2 == 0
+  const isRandomNumber = randomNumbers[i]
+  
+  if (isAnEvenNumber) {
+    evenNumbers.push(isRandomNumber)
+  } else {
+    oddNumbers.push(isRandomNumber)
+  }
+}
+
+console.log(`Numeros ímpares: ${oddNumbers.join(', ')
+  .replace(', 3', ' e 3')}. Números pares: ${evenNumbers.join(', ').replace(', 5',' e 5')}.`)
