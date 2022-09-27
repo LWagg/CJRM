@@ -96,6 +96,35 @@ console.log(phrase)
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
+let booleanCount = 0
+let stringCount = 0
+let newArray = []
+
+for (let i = 0; i < randomValues.length; i++) {
+    newArray.push(randomValues[i])
+
+    if (typeof randomValues[i] === 'string') { 
+      stringCount += 1
+    } else if (stringCount >= 4) {
+      break // Código para contar e parar no momento que chegar na 4ª string
+    }
+
+    if (typeof randomValues[i] === 'boolean') { 
+      booleanCount += 1 // Contagem dos booleans até o break
+    }
+
+    if (typeof randomValues[i] === 'string') {
+      newArray.push(randomValues[i])
+    }
+}
+
+console.log(newArray)
+console.log(`As primeiras 4 strings são XX, XX, XX e XX;
+- Até que as primeiras 4 strings fossem iteradas, ${booleanCount} booleans foram iterados;
+- O array foi iterado por XX vezes.`)
+
+
+
 /*
   06
 
