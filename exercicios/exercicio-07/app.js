@@ -19,7 +19,7 @@
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 if (!animals.includes('leão')) {
-  console.log("Leão não existe no array animals.")
+  //console.log("Leão não existe no array animals.")
 } else {
   console.log("Existe um leão no array animals.")
 }
@@ -48,7 +48,7 @@ for (let i = 0; i < randomNumbers.length; i++) {
       break
  }
 }
-console.log(`A soma ultrapassou ${limit}. Até aqui, o valor atual é ${sumNumbers}.`)
+//console.log(`A soma ultrapassou ${limit}. Até aqui, o valor atual é ${sumNumbers}.`)
 
 
 
@@ -75,7 +75,7 @@ for (let i = 0; i < sentence.length; i++) {
   
 }
 
-console.log(phrase)
+//console.log(phrase)
 
 
 
@@ -98,30 +98,39 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
 
 let booleanCount = 0
 let stringCount = 0
-let newArray = []
+let firstFourStrings = []
+let countingIteration = null
 
 for (let i = 0; i < randomValues.length; i++) {
-    newArray.push(randomValues[i])
-
-    if (typeof randomValues[i] === 'string') { 
-      stringCount += 1
+    const typeData = typeof randomValues[i]
+    const isItemAString = typeData === 'string'
+    const isItemABoolean = typeData === 'boolean'
+    
+    if (isItemAString) { 
+      stringCount++
     } else if (stringCount >= 4) {
       break // Código para contar e parar no momento que chegar na 4ª string
     }
 
-    if (typeof randomValues[i] === 'boolean') { 
-      booleanCount += 1 // Contagem dos booleans até o break
+    if (isItemAString) {
+      firstFourStrings.push(randomValues[i]) // Aqui jogamos as strings que passaram pela iteração até o break em um novo array
     }
 
-    if (typeof randomValues[i] === 'string') {
-      newArray.push(randomValues[i])
+    if (isItemABoolean) { 
+      booleanCount++ // Contagem dos booleans até o break
     }
+    
+    countingIteration++ // Contagem das iterações
 }
 
-console.log(newArray)
-console.log(`As primeiras 4 strings são XX, XX, XX e XX;
-- Até que as primeiras 4 strings fossem iteradas, ${booleanCount} booleans foram iterados;
-- O array foi iterado por XX vezes.`)
+const lastItem = firstFourStrings[firstFourStrings.length - 1]
+const fourStrings = firstFourStrings.join(', ')
+.replace(`, ${lastItem}`, ` e ${lastItem}`)
+
+console.log(`3 informações sobre o array randomValues:
+  -As primeiras 4 strings são ${fourStrings};
+  - Até que as primeiras 4 strings fossem iteradas, ${booleanCount} booleans foram iterados;
+  - O array foi iterado por ${countingIteration} vezes.`)
 
 
 
