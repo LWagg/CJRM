@@ -5,7 +5,8 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(true, false)
+//console.log(!true, !false)
+
 
 /*
   02
@@ -17,6 +18,13 @@ console.log(true, false)
 */
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
+if (!animals.includes('leão')) {
+  console.log("Leão não existe no array animals.")
+} else {
+  console.log("Existe um leão no array animals.")
+}
+
+
 
 /*
   03
@@ -30,6 +38,21 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+let sumNumbers = 0
+const limit = 400
+
+for (let i = 0; i < randomNumbers.length; i++) {
+    sumNumbers += randomNumbers[i]
+
+    if (sumNumbers > limit) {
+      break
+ }
+}
+console.log(`A soma ultrapassou ${limit}. Até aqui, o valor atual é ${sumNumbers}.`)
+
+
+
+   
 
 /*
   04
@@ -41,6 +64,20 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
+let phrase = ''
+  
+for (let i = 0; i < sentence.length; i++) {
+  const word = sentence[i]
+  if (word === 'certeza') {
+    continue
+  }
+  phrase += `${word} `  
+  
+}
+
+console.log(phrase)
+
+
 
 /*
   05
