@@ -127,17 +127,17 @@ const lastItem = firstFourStrings[firstFourStrings.length - 1]
 const fourStrings = firstFourStrings.join(', ')
 .replace(`, ${lastItem}`, ` e ${lastItem}`)
 
-console.log(`3 informações sobre o array randomValues:
+/*console.log(`3 informações sobre o array randomValues:
   -As primeiras 4 strings são ${fourStrings};
   - Até que as primeiras 4 strings fossem iteradas, ${booleanCount} booleans foram iterados;
-  - O array foi iterado por ${countingIteration} vezes.`)
+  - O array foi iterado por ${countingIteration} vezes.`)*/
 
 
 
 /*
   06
 
-  - Descomente a constante abaixo atribua a ela algum tipo de bebida. Exemplo:  
+  - Descomente a constante abaixo e atribua a ela algum tipo de bebida. Exemplo:  
     água, refrigerante ou suco;
   - Utilize um switch statement com cases para essas 3 possibilidades de bebida;
   - Se o tipo da bebida é água, atribua à uma variável a mensagem "Substância 
@@ -154,7 +154,24 @@ console.log(`3 informações sobre o array randomValues:
     da bebida além da que você escolheu.
 */
 
-// const drinkType
+const drinkType = 'cerveja'
+let drinkMessage = null
+
+switch (drinkType) {
+  case 'água':
+    drinkMessage = "Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio."
+    break
+  case 'refrigerante':
+    drinkMessage = "Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar"
+    break
+  case 'suco':
+    drinkMessage = "Bebida produzida do líquido extraído de fruto"
+    break
+  default:
+    drinkMessage = 'Bebida desconhecida'
+}
+
+//console.log(drinkMessage)
 
 /*
   07
@@ -164,7 +181,23 @@ console.log(`3 informações sobre o array randomValues:
     para testar o switch que você escreveu.
 */
 
-const a = 2
+const number = 1
+let returnMessage = null
+const numberMessage = 'O valor de "number" é'
+
+switch (number) {
+  case 0:
+    returnMessage = `${numberMessage} ${number}`
+    break
+  case 1 :
+    returnMessage = `${numberMessage} ${number}`
+    break
+  default:
+    returnMessage = `${numberMessage} qualquer número, exceto 0 e 1`
+}
+
+console.log(returnMessage)
+
 
 // if (a === 0) {
 //   console.log(`O valor de "a" é ${a}`)
