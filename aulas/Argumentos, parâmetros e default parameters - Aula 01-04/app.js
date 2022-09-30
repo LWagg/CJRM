@@ -1,0 +1,7 @@
+// Argumentos, parâmetros  e default parameters
+
+const myFunc = function (name, lastName) { // O NAME E LAST NAME É UM PARÂMETRO QUE GUARDA O ARGUMENTO RECEBIDO PELA FUNÇÃO
+    console.log(`Oi, ${name} ${lastName}`) // AQUI NÃO IMPORTA A ORDEM COM QUE USAMOS OS PARÂMETROS RECEBIDOS
+}
+
+myFunc('Wagner', 'Leite') // AQUI PASSAMOS ARGUMENTOS  PARA A FUNÇÃO EXECUTAR. É IMPORTANTE QUE A ORDEM COM QUE PASSAMOS OS ARGUMENTOS E DECLARAMOS OS PARÂMETROS SEJAM RESPEITADAS.
