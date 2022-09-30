@@ -41,17 +41,15 @@ console.log(division(5, 6).toFixed(2))
   "Esta é a Xª vez que essa string é exibida."
 */
 
-const log = function (value = 'Você precisa passar algum valor como argumento') {
+const log = function (value = 'Digite algum valor válido') {
   console.log(value)
 }
 
 for (let i = 0; i < 7; i++) {
-  const repeater = i + 1
-  
-  log(`Esta é a ${repeater} vez que essa string é exibida.`)
+  const sum = i + 1
+
+  //log(`Esta é a ${sum}ª vez que essa string é exibida.`)
 }
-
-
 
 /*
   04
@@ -65,6 +63,25 @@ for (let i = 0; i < 7; i++) {
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+
+function upperCaseArrays(arrays = []) {
+  let newArray = []
+
+  for (let i = 0; i < arrays.length; i++) {
+    newArray.push(arrays[i].toUpperCase())
+  }
+
+  return newArray
+}
+
+const fruits = ['banana', 'maça', 'abacaxi']
+
+
+log(upperCaseArrays(fruits))
+
+
+
+
 
 /*
 
