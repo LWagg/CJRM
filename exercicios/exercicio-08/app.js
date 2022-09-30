@@ -41,6 +41,15 @@ console.log(division(5, 6).toFixed(2))
   "Esta é a Xª vez que essa string é exibida."
 */
 
+const log = function (value = 'Você precisa passar algum valor como argumento') {
+  console.log(value)
+}
+
+for (let i = 0; i < 7; i++) {
+  const repeater = i + 1
+  
+  log(`Esta é a ${repeater} vez que essa string é exibida.`)
+}
 
 
 
