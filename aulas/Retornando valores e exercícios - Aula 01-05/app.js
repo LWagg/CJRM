@@ -5,8 +5,6 @@ const double = function (number) {
 }
 
 
-
-
 const result = double(3)
 
 

@@ -7,6 +7,13 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+function multiply (num1 = 0, num2 = 0) {
+  return num1 * num2
+}
+
+
+console.log(multiply(5, 6))
+
 /*
   02
 
@@ -14,6 +21,12 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+
+const division = function (num1 = 1, num2 = 1) {
+  return num1 / num2
+}
+
+console.log(division(5, 6).toFixed(2))
 
 /*
   03
@@ -27,6 +40,9 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+
+
+
 
 /*
   04
@@ -42,6 +58,9 @@
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
 /*
+
+
+
   05
 
   - Implemente uma função que retorna se um número é positivo;
