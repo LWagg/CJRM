@@ -96,27 +96,24 @@ log(upperCaseArrays(millennialWords))
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
-function positiveNumber (array = []) {
-  let positive = 0
-  let negative = 0
-  let arraylength = 0
-  
-  for (let i = 0; i < array.length; i++) {
-    
-    if (array[i] >= 0) {
-      positive += 1
-    } else {
-      negative += 1
-    }
+let positiveCount = 0
+let negativeCount = 0
 
-    arraylength++
-  }
-  
-  return log(`O array possui ${arraylength} números, sendo ${positive} positivos e ${negative} negativos.`)
-     
+const positiveNumber = function (number = 0) {
+  return number >= 1
 }
 
-positiveNumber(randomNumbers)
+for (let i = 0; i < randomNumbers.length; i++) {
+  const isPositiveNumber = positiveNumber(randomNumbers[i])
+  
+  if (isPositiveNumber) {
+    positiveCount++
+  } else {
+    negativeCount ++
+  }
+}
+
+console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${positiveCount} positivos e ${negativeCount} negativos.`)
 
 
 /*
@@ -129,7 +126,28 @@ positiveNumber(randomNumbers)
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+
+
+function getOddNumbers(array = []) {
+  let oddArray = []
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 1) {
+      oddArray.push(array[i])
+    }
+  }
+
+  return oddArray
+}
+
+
+
+console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
+
+
+
+
+
 
 /*
   07
