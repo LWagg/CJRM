@@ -66,21 +66,18 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 
 function upperCaseArrays(arrays = []) {
   let newArray = []
+  
 
   for (let i = 0; i < arrays.length; i++) {
-    newArray.push(arrays[i].toUpperCase())
+    const wordInUpperCase = arrays[i].toUpperCase()
+    
+    newArray.push(wordInUpperCase)
   }
 
   return newArray
 }
 
-const fruits = ['banana', 'maça', 'abacaxi']
-
-
-log(upperCaseArrays(fruits))
-
-
-
+log(upperCaseArrays(millennialWords))
 
 
 /*
@@ -98,6 +95,29 @@ log(upperCaseArrays(fruits))
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+
+function positiveNumber (array = []) {
+  let positive = 0
+  let negative = 0
+  let arraylength = 0
+  
+  for (let i = 0; i < array.length; i++) {
+    
+    if (array[i] >= 0) {
+      positive += 1
+    } else {
+      negative += 1
+    }
+
+    arraylength++
+  }
+  
+  return log(`O array possui ${arraylength} números, sendo ${positive} positivos e ${negative} negativos.`)
+     
+}
+
+positiveNumber(randomNumbers)
+
 
 /*
   06
