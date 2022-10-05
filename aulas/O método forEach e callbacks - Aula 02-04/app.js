@@ -23,10 +23,10 @@ const socialNetworks = ['youtube', 'twitter', 'instagram', 'facebook']
 
 
 const logArrayInfo = (socialNetwork, index, array) => {
-    console.log(index, socialNetwork, array) // AQUI PASSAMOS UMA FUNÇÃO DE CALLBACK COMO ARGUMENTO DO MÉTODO forEach, QUE POR SUA VEZ FAZ A MESMA FUNÇÃO DE UM FOR, QUE É ITERAR SOBRE O ARRAY.
+    console.log(index, socialNetwork, array) 
 }
 
-socialNetworks.forEach(logArrayInfo) 
+socialNetworks.forEach(logArrayInfo) // AQUI PASSAMOS UMA FUNÇÃO DE CALLBACK COMO ARGUMENTO DO MÉTODO forEach, QUE POR SUA VEZ FAZ A MESMA FUNÇÃO DE UM FOR, QUE É ITERAR SOBRE O ARRAY.
 
 
 

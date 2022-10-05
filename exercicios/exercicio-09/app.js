@@ -117,14 +117,6 @@ const isNull = value => value === null
 console.log(isNull(null))
 
 
-
-
-
-
-
-
-
-
 /*
   09
 
@@ -135,6 +127,8 @@ console.log(isNull(null))
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+
+
 
 /*
   10
@@ -147,6 +141,8 @@ console.log(isNull(null))
     resulte no triplo de 33.
 */
 
+
+
 /*
   11
 
@@ -157,6 +153,7 @@ console.log(isNull(null))
 */
 
 const numbers = [1, 2, 3]
+
 
 /*
   12
@@ -169,9 +166,11 @@ const numbers = [1, 2, 3]
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+//for (let i = 0; i < letters.length; i++) {
+  //lettersCopy.push(letters[i])
+//}
+
+
 
 /*
   13
@@ -191,6 +190,8 @@ for (let i = 0; i < letters.length; i++) {
   </article>
 */
 
+
+
 const section = document.querySelector('[data-js="section"]')
 
 const review = [
@@ -202,7 +203,13 @@ const review = [
 
 let paragraphs = ''
 
-//section.innerHTML = paragraphs
+const createParagraph = paragraph => {
+  paragraphs += `<p>${paragraph}</p>`
+}
+
+review.forEach(createParagraph)
+
+section.innerHTML = paragraphs
 
 /*
   14
@@ -224,3 +231,4 @@ let paragraphs = ''
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+
