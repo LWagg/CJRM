@@ -13,9 +13,12 @@
     valor no console.
 */
 
-function convertToString (value) {
-  return String(value)
-}
+//function convertToString (value) {
+ // return String(value)
+//}
+
+const convertToString  = value =>  String(value)
+console.log(typeof convertToString(true))
 
 /*
   02
@@ -23,6 +26,12 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+
+const stringCounter = string => string.length
+
+console.log(stringCounter('Wagner'))
+
+
 
 /*
   03
@@ -34,12 +43,22 @@ function convertToString (value) {
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
 
+const lowerCase = string => string.toLowerCase()
+
+console.log(lowerCase(`CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO`))
+
+
 /*
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+
+const indexOfString = (string, caracter) => string.indexOf(caracter)
+
+console.log(indexOfString('Wagner', 'g'))
+
 
 /*
   05
@@ -48,12 +67,26 @@ function convertToString (value) {
     passado por argumento existe no array (também passado por argumento).
 */
 
+const numeric = [1, 3, 8, 9, 11]
+
+const isItemIncluded = (array, item) => array.includes(item)
+
+console.log(isItemIncluded(numeric, 10))
+
+
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+
+const arrayFusion = (fisrtArray, secondArray) => fisrtArray.concat(secondArray)
+
+console.log(arrayFusion(['Wagner'], ['Leite']))
+
+
+
 
 /*
   07
@@ -62,12 +95,35 @@ function convertToString (value) {
     mas com o último item removido.
 */
 
+const removeLastItemArray = array => {
+  array.pop()
+  return array
+}
+
+console.log(removeLastItemArray([1, 2, 3, 4, 5]))
+
+
+
 /*
   08
 
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+
+const a = 0
+const isNull = value => value === null
+
+console.log(isNull(null))
+
+
+
+
+
+
+
+
+
 
 /*
   09
@@ -146,7 +202,7 @@ const review = [
 
 let paragraphs = ''
 
-section.innerHTML = paragraphs
+//section.innerHTML = paragraphs
 
 /*
   14
