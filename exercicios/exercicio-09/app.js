@@ -232,3 +232,27 @@ section.innerHTML = paragraphs
     pessoas já mencionadas no início da mensagem).
 */
 
+const postLikes = (names = []) => {
+  const firstPerson = names[0]
+  const secondPerson = names[1]
+  const thirdPerson = names[2]
+  const otherPeople = names.length - 2
+  
+  
+  
+  switch (names.length) {
+    case 0:
+      return `Ninguém curtiu isso.`
+    case 1:
+      return `${firstPerson} curtiu isso.`
+    case 2:
+      return `${firstPerson} e ${secondPerson} curtiram isso.`
+    case 3:
+      return `${firstPerson}, ${secondPerson} e ${thirdPerson} curtiram isso`
+    default:
+      return `${firstPerson}, ${secondPerson} e mais ${otherPeople} pessoas curtiram isso.`
+  }
+}
+
+
+console.log(postLikes(['Wagner', 'Bruno', 'Leticia', 'Brenda']))
