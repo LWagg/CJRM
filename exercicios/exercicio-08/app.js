@@ -186,6 +186,12 @@ const functions = [
   function () { return 'Ocidentais.' }
 ]
 
+phrase = ''
 
+functions.forEach((word) => {
+  phrase += `${word()} `
+})
+
+console.log(phrase)
 
 
