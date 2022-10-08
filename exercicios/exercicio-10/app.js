@@ -116,14 +116,18 @@ let dog = {
 }
 }
 
+const ageSum = (cat, dog) => `A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}`
+
+const ageMessage = ageSum(cat, dog)
+
+console.log(ageMessage)
 
 
 
 
 
 
-
-
+ 
 /*
   08
 
@@ -140,8 +144,8 @@ const isAnSUV = car => {
   return false
 }
 
-// console.log(isAnSUV('Honda Civic'))
-// console.log(isAnSUV('Ford EcoSport'))
+console.log(isAnSUV('Honda Civic'))
+console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
