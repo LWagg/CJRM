@@ -173,9 +173,17 @@ console.log(isAnSUV('Ford EcoSport'))
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
 
+const getType = type => {
+  let obj = {
+    null: 'Seta, explicitamente, uma variável sem valor.',
+    undefined: 'Representa um valor não-setado.',
+    object: 'Arrays, Datas, Objetos literais, Funções, etc.',
+  }
 
+  return obj[type]
+}
 
-
+console.log(getType())
 
 
 
