@@ -5,6 +5,13 @@
   - Ela deve ter um escopo global.
 */
 
+const nome = 'Wagner'
+
+
+
+
+
+
 /*
   02
 
@@ -18,6 +25,15 @@
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+
+function myAge() {
+  let age = 30
+  return age
+}
+
+console.log(myAge())
+//console.log(age)
+
 
 /*
   03
@@ -37,17 +53,52 @@
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
 
+let car = {
+  name: 'Punto',
+  brand: 'Fiat',
+  colors: ['Branco', 'Cinza', 'Preto'],
+  isRunning: false,
+  run: function () {
+    this.isRunning = true
+    return `O ${this.name} está em movimento`
+  },
+  stop: function() {
+    this.isRunning = false
+    return `O ${this.name} está parado`
+  },
+  getColorsMessage: function() {
+    return `O ${this.name} está disponível nas cores ${this.colors[0]}, ${this.colors[1]}e ${this.colors[2]}`
+  }
+
+}
+
+
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
 
+console.log(car.run())
+console.log(car.isRunning)
+
+
+
+
 /*
   05
 
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
+
+console.log(car.stop())
+console.log(car.isRunning === false)
+
+
+
+
+
+
 
 /*
   06
