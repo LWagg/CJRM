@@ -13,7 +13,7 @@
 let cat = {
   name: 'Tom',
   age: 8,
-  color: 'gray',
+  color: 'cinza',
   bestFriends: ['Lucaz', 'Tobi'],
   sound: function () {
     return 'Miaaau!'
@@ -71,15 +71,13 @@ console.log(cat.bestFriends)
     colchetes.
 */
 
+const addColor = object => {
+  object['color'] += ` e azul.`
+}
 
+addColor(cat)
 
-
-
-
-
-
-
-
+console.log(cat['color'])
 
 
 /*
@@ -90,6 +88,13 @@ console.log(cat.bestFriends)
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
 
+const isObject = value => typeof value === 'object'
+
+
+console.log(isObject(cat))
+
+
+
 /*
   07
 
@@ -99,6 +104,25 @@ console.log(cat.bestFriends)
 
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
+
+
+let dog = {
+  name: 'Taison',
+  age: 5,
+  color: 'marrom',
+  bestFriends: ['Fredy', 'Nico'],
+  sound: function () {
+    return 'Auau!'
+}
+}
+
+
+
+
+
+
+
+
 
 /*
   08
