@@ -54,13 +54,19 @@ console.log(cat.age)
     adicionado.
 */
 
-const addFriend = (friend) => {
-    cat.bestFriends.push(friend)
-}
+const addFriend = friend => cat.bestFriends.push(friend)
 
-addFriend('Lilica')
+addFriend('José')
 
 console.log(cat.bestFriends)
+
+
+
+
+
+
+
+
 
 /*
   05
@@ -71,13 +77,15 @@ console.log(cat.bestFriends)
     colchetes.
 */
 
-const addColor = object => {
-  object['color'] += ` e azul.`
+const changeColor = object => {
+  object['color'] += ` e verde`
 }
 
-addColor(cat)
+changeColor(cat)
 
-console.log(cat['color'])
+const addColor = 'color'
+
+console.log(cat[addColor])
 
 
 /*
@@ -116,9 +124,9 @@ let dog = {
 }
 }
 
-const ageSum = (cat, dog) => `A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}`
+const setAgeMessase = (cat, dog) => `A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}.`
 
-const ageMessage = ageSum(cat, dog)
+const ageMessage = setAgeMessase(cat, dog)
 
 console.log(ageMessage)
 
@@ -136,13 +144,18 @@ console.log(ageMessage)
   - Como você refatoraria esta função?
 */
 
+let carList = ['Honda HR-V', 'Jeep Renegade', 'Ford EcoSport', 'Hyundai iX35' ]
+
+
+
 const isAnSUV = car => {
-  if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
+  if (carList.includes(car)) {
     return true
   }
 
   return false
 }
+ 
 
 console.log(isAnSUV('Honda Civic'))
 console.log(isAnSUV('Ford EcoSport'))
@@ -159,3 +172,10 @@ console.log(isAnSUV('Ford EcoSport'))
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
+
+
+
+
+
+
+
