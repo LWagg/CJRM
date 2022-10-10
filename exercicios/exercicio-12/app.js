@@ -27,6 +27,17 @@ const best2019Movies = [
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
 
+let message = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
+const generateMessage = movie => {
+  message += `
+  - ${movie.title}, dirigido por ${movie.directedBy}`
+}
+
+best2019Movies.forEach(generateMessage)
+
+console.log(message)
+
+
 /*
   02
 
@@ -61,6 +72,16 @@ const youtubeUser = {
     country: 'Brasil'
   }
 }
+
+
+
+
+
+
+
+
+
+
 
 /*
   03
