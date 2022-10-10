@@ -128,7 +128,11 @@ console.log(isNull(null))
     foi exibido.
 */
 
-const callCallback = 
+const invokeCallback = callback => callback()
+
+const nameConsole = () => console.log('Wagner')
+
+invokeCallback(nameConsole)
 
 
 
@@ -143,7 +147,11 @@ const callCallback =
     resulte no triplo de 33.
 */
 
+const callCallback = (callback, value) => callback(value)
 
+const triple = number => number * 3
+
+console.log(callCallback(triple, 33))
 
 /*
   11
@@ -155,6 +163,12 @@ const callCallback =
 */
 
 const numbers = [1, 2, 3]
+
+const arrayElements = (item, index, array) => {
+  console.log(`O ${index + 1}º item do array ${array} é ${item}.`)
+}
+  
+numbers.forEach(arrayElements)
 
 
 /*
@@ -172,7 +186,11 @@ let lettersCopy = []
   //lettersCopy.push(letters[i])
 //}
 
+letters.forEach(letter => {
+  lettersCopy.push(letter)
+})
 
+console.log(lettersCopy)
 
 /*
   13
