@@ -5,14 +5,21 @@
     com que as informações do gato estejam disponíveis fora da função;
   - Abaixo da função "getCatInfo", exiba no console a seguinte mensagem:
 
-  "NOME_DO_GATO é um gato COR_DO_GATO de IDADE_DO_GATO anos."
+  "NOME_DO_GATO é um gato COR_DO_GATO de IDADE_DO_GATO anos"
 */
 
 const getCatInfo = () => {
-  const name = 'Marcos'
+  const nome = 'Marcos'
   let age = 3
   const color = 'Cinza'
+  return {nome, age, color} // retornamos um objeto, podemos remover a redundância de atribuir o mesmo nome como valor de uma propriedade que já recebe esse nome.
 }
+
+
+const { nome, age, color}= getCatInfo() //Expressão para desestruturar um objeto
+
+console.log(`${nome} é um gato ${color} de ${age} anos`)
+
 
 /*
   02
@@ -29,7 +36,9 @@ const external = () => {
     const extraInternal = () => {
       console.log(movie.toUpperCase())
     }
+    extraInternal()
   }
+  internal()
 }
 
 external()
@@ -45,6 +54,10 @@ external()
 
 let randomNumbers = [3, 2, 1]
 
+randomNumbers.reverse()
+console.log(randomNumbers)
+
+
 /*
   04
 
@@ -58,6 +71,14 @@ let crazyArray = [
   function getMessage () { return 'hi' },
   [ 5, 96, 53  ]
 ]
+
+const removeFirstElement = crazyArray.shift()
+
+console.log(crazyArray)
+
+console.log(removeFirstElement)
+
+
 
 /*
   05
@@ -75,6 +96,11 @@ const dogs = [
   { name: 'Zequinha', age: 7, gender: 'Male', breed: 'Poodle' },
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
+
+const found = dogs => dogs.name === 'Zequinha'
+
+console.log(dogs.find(found))
+
 
 /*
   06
@@ -108,6 +134,14 @@ const dogs = [
   </section>
 */
 
+const mainTitle = document.querySelector('.main-title')
+
+console.log(mainTitle)
+
+
+
+
+
 /*
   07
 
@@ -115,3 +149,7 @@ const dogs = [
     página, através da classe deles;
   - Exiba esse NodeList no console.
 */
+
+const h2 = document.querySelectorAll('.secondary-title')
+
+console.log(h2)
