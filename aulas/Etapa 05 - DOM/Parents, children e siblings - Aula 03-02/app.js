@@ -1,6 +1,6 @@
 const article = document.querySelector('article')
 
-console.log(article.children) // Aqui usamo a propriedade children para saber quais tags estão dentro do article. Isso vai retornar uma HTMLCollection dos itens, lembrando que não podemos usar um forEach em HTMLCollection.
+console.log(article.children) // Aqui usamos a propriedade children para saber quais tags estão dentro do article. Isso vai retornar uma HTMLCollection dos itens, lembrando que não podemos usar um forEach em HTMLCollection.
 
 console.log(Array.from(article.children)) // Aqui nós transformamos o HTMLCollection em um array, através do método FROM da função construtora ARRAY. Lembrando que essa invoção do array.from não modifica o conteúdo original do article.
 

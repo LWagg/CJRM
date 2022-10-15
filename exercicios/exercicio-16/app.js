@@ -7,16 +7,46 @@
 
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
+const h2 = document.querySelector('h2')
+const egg = document.querySelector('.egg')
+const button = document.querySelector('button')
 
-elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
-  })
-})
 
-div.addEventListener('click', () => {
-  console.log('Clicou na div.')
-})
+// elementsInsideDiv.forEach(element => {
+//   element.addEventListener('click', event => {
+//     const tagName = event.target.tagName.toLowerCase()
+    
+//     event.stopPropagation()
+//     h2.textContent = `Clicou no ${tagName}, filho
+//     da div.`
+//   })
+// })
+
+const divClicked = event => {
+  const clickedElementName = event.target.tagName.toLowerCase()
+  //h2.textContent = 'Clicou na div.'
+  console.log(clickedElementName)
+}
+
+div.addEventListener('click', divClicked)
+
+const logCopiedText = () => {
+  console.log("Texto copiado!")
+}
+
+h2.addEventListener('copy', logCopiedText)
+
+const showAxisOnEgg = ({offsetX, offsetY}) => {
+  egg.textContent = `Eixo X: ${offsetX} | Eixo Y: ${offsetY}`
+}
+
+egg.addEventListener('mousemove', showAxisOnEgg)
+
+const changeEggColor = () => {
+  egg.style.backgroundColor= "lightgoldenrodyellow"
+}
+
+button.addEventListener('click', changeEggColor)
 
 /*
   02
@@ -26,6 +56,8 @@ div.addEventListener('click', () => {
     da div.".
 */
 
+
+
 /*
   03
 
@@ -34,12 +66,19 @@ div.addEventListener('click', () => {
     filho da div, ao invés de ser exibida no console, seja inserida neste h2.
 */
 
+
+
+
 /*
   04
 
   - Faça com que quando o texto do h2 for copiado, a mensagem "Texto copiado!"  
     seja exibida no console.
 */
+
+
+
+
 
 /*
   05
@@ -49,12 +88,19 @@ div.addEventListener('click', () => {
     "Eixo X: COORDENADA_EIXO_X | Eixo Y: COORDENADA_EIXO_Y".
 */
 
+
+
+
 /*
   06
 
   - Modifique a cor do ovo para "lightgoldenrodyellow" quando o botão for 
     clicado.
 */
+
+
+
+
 
 /*
   07
@@ -76,3 +122,10 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+
+const isSomePersonFrontEndDeveloper = people.some(({profession}) => profession === 'Front-end developer')
+
+if (isSomePersonFrontEndDeveloper) {
+  console.log("O array people contém, no mínimo, um(a) Front-end developer.")
+}
+
