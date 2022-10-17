@@ -12,40 +12,32 @@ const egg = document.querySelector('.egg')
 const button = document.querySelector('button')
 
 
-// elementsInsideDiv.forEach(element => {
-//   element.addEventListener('click', event => {
-//     const tagName = event.target.tagName.toLowerCase()
-    
-//     event.stopPropagation()
-//     h2.textContent = `Clicou no ${tagName}, filho
-//     da div.`
-//   })
-// })
+const showClickedElement = ({target}) => {
+  const clickedElementName = target.tagName.toLowerCase()
 
-const divClicked = event => {
-  const clickedElementName = event.target.tagName.toLowerCase()
-  //h2.textContent = 'Clicou na div.'
-  console.log(clickedElementName)
+  if (clickedElementName === 'div') {
+    h2.textContent = 'Clicou na div.'
+    return
+  }
+
+  h2.textContent = `Clicou no ${clickedElementName}, filho da div.`
 }
-
-div.addEventListener('click', divClicked)
 
 const logCopiedText = () => {
   console.log("Texto copiado!")
 }
 
-h2.addEventListener('copy', logCopiedText)
-
 const showAxisOnEgg = ({offsetX, offsetY}) => {
   egg.textContent = `Eixo X: ${offsetX} | Eixo Y: ${offsetY}`
 }
-
-egg.addEventListener('mousemove', showAxisOnEgg)
 
 const changeEggColor = () => {
   egg.style.backgroundColor= "lightgoldenrodyellow"
 }
 
+div.addEventListener('click', showClickedElement)
+h2.addEventListener('copy', logCopiedText)
+egg.addEventListener('mousemove', showAxisOnEgg)
 button.addEventListener('click', changeEggColor)
 
 /*
