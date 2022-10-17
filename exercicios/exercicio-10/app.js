@@ -15,7 +15,7 @@ let cat = {
   age: 8,
   color: 'cinza',
   bestFriends: ['Lucaz', 'Tobi'],
-  sound: function () {
+  sound () {
     return 'Miaaau!'
   }
 }
