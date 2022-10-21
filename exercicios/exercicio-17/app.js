@@ -4,10 +4,13 @@
   - No envio do form, faça com que a página não seja recarregada.
 */
 
+const form = document.querySelector('form')
+const input = document.querySelector('#input')
 
-
-
-
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  console.log(input.value)
+})
 
 
 
@@ -18,6 +21,10 @@
     input e exiba-o no console.
 */
 
+// OK
+
+
+
 /*
   03
 
@@ -25,6 +32,10 @@
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
+
+
+
+
 
 /*
   04
