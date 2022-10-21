@@ -2,13 +2,13 @@ const form = document.querySelector('.signup-form')
 const feedback = document.querySelector('.feedback')
 
 
-const testUserName = username => /^[a-zA-z]{6,12}$/.test(username)
+const testUsername = username => /^[a-zA-z]{6,12}$/.test(username)
 
 
 form.addEventListener('submit', event => {
     event.preventDefault() 
 
-    const isAValidUsername = testUserName(event.target.username.value)
+    const isAValidUsername = testUsername(event.target.username.value)
     
     if (isAValidUsername) {
         feedback.textContent = 'Username válido!'
@@ -20,7 +20,7 @@ form.addEventListener('submit', event => {
 })
 
 form.username.addEventListener('keyup', event => {
-    const isAValidUsername = testUserName(event.target.value)
+    const isAValidUsername = testUsername(event.target.value)
 
     if (isAValidUsername) {
         form.username.setAttribute('class', 'success')
