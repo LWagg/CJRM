@@ -7,20 +7,33 @@
 const form = document.querySelector('form')
 const input = document.querySelector('#input')
 
+const clearInput = () => {
+  input.value = ''
+    input.focus()
+}
 
-form.addEventListener('submit', event => {
+const logMessage = message => {
+  console.log(message)
+  clearInput()
+}
+
+const handleSubmit = event => {
   event.preventDefault()
-  const inputValue = event.target.input.value
+  const input = event.target.input
   const testRegexForm = /^[a-zA-Z0-9]{7,11}$/
-  const isAMatch = testRegexForm.test(inputValue)
+  const isAValidValue = testRegexForm.test(input.value)
 
-  if (isAMatch) {
-    console.log(`"${inputValue}" é um valor válido, pois tem entre 7 e 11 caracteres`)
+  if (isAValidValue) {
+    logMessage(`O valor inserido no input é válido`)
     return
   }
 
-  console.log(`"${inputValue}" é um valor inválido, pois contém um caracter especial ou não tem entre 7 e 11 caracteres`)
-})
+  logMessage(`Valor inválido`)
+  
+
+}
+
+form.addEventListener('submit', handleSubmit)
 
 
 
