@@ -23,13 +23,14 @@
 
 const form  = document.querySelector('form')
 const feedback = document.querySelector('.feedback')
-const testUsername = /^[a-zA-Z]{6,}$/
 
+
+const testingUsername = username => /^[a-zA-Z]{6,}$/.test(username)
 
 form.addEventListener('submit', event => {
   event.preventDefault()
 
-  const isAValidUsername = testUsername.test(event.target.username.value)
+  const isAValidUsername = testingUsername(event.target.username.value)
   
   if (isAValidUsername) {
     feedback.setAttribute('class', 'username-success-feedback')
@@ -42,8 +43,17 @@ form.addEventListener('submit', event => {
   com apenas letras maiúsculas e/ou minúsculas`
 })
 
-form.addEventListener('keyup', event => {
+form.username.addEventListener('keyup', event => {
+  const isAValidUserName = testingUsername(event.target.value)
+
+  if(isAValidUserName) {
+    feedback.textContent = ''
+    form.setAttribute('class', 'submit-success-feedback')
+    return
+  }
   
+  feedback.textContent = ''
+  form.setAttribute('class', 'submit-help-feedback')
 })
 
 
