@@ -21,6 +21,37 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 
+const form  = document.querySelector('form')
+const feedback = document.querySelector('.feedback')
+const testUsername = /^[a-zA-Z]{6,}$/
+
+
+form.addEventListener('submit', event => {
+  event.preventDefault()
+
+  const isAValidUsername = testUsername.test(event.target.username.value)
+  
+  if (isAValidUsername) {
+    feedback.setAttribute('class', 'username-success-feedback')
+    feedback.textContent = `Username válido!`
+    return
+  }
+  
+  feedback.setAttribute('class', 'username-help-feedback')
+  feedback.textContent = `O valor deve conter no mínimo 6 caracteres,  
+  com apenas letras maiúsculas e/ou minúsculas`
+})
+
+form.addEventListener('keyup', event => {
+  
+})
+
+
+
+
+
+
+
 /*
   02
 
