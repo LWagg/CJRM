@@ -21,39 +21,22 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 
-const form  = document.querySelector('form')
-const feedback = document.querySelector('.feedback')
+const inputUsername = document.querySelector('#username')
 
+inputUsername.addEventListener('keyup', event => {
+  const inputValue = event.target.value
+  const usernameRegex = /^[a-zA-Z]{6,}$/
 
-const testingUsername = username => /^[a-zA-Z]{6,}$/.test(username)
+  const p = document.createElement('p')
 
-form.addEventListener('submit', event => {
-  event.preventDefault()
-
-  const isAValidUsername = testingUsername(event.target.username.value)
-  
-  if (isAValidUsername) {
-    feedback.setAttribute('class', 'username-success-feedback')
-    feedback.textContent = `Username válido!`
+  if (!usernameRegex.test(inputValue)) {
+    p.textContent = `O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas`
+    event.target.insertAdjacentElement('afterend', p)
     return
   }
-  
-  feedback.setAttribute('class', 'username-help-feedback')
-  feedback.textContent = `O valor deve conter no mínimo 6 caracteres,  
-  com apenas letras maiúsculas e/ou minúsculas`
-})
 
-form.username.addEventListener('keyup', event => {
-  const isAValidUserName = testingUsername(event.target.value)
-
-  if(isAValidUserName) {
-    feedback.textContent = ''
-    form.setAttribute('class', 'submit-success-feedback')
-    return
-  }
-  
-  feedback.textContent = ''
-  form.setAttribute('class', 'submit-help-feedback')
+  p.textContent = `Username válido =)`
+  event.target.insertAdjacentElement('afterend', p)
 })
 
 
