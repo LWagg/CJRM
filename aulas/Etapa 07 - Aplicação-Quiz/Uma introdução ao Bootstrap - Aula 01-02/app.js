@@ -1,0 +1,1 @@
+/* Bootstrap é uma biblioteca CSS para componentes front-end. São elementos e partes da interface do usuário que podem ser reutilizadas. Acesso rápido através do CDN, uma rede de distribuição de contepudo através de servidores locais próximos de nós. Basta colar o link disponibilizado no site oficial do bootstrap na página HTML. */
