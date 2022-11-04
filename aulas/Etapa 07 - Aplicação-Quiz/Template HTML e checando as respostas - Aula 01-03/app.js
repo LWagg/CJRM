@@ -16,7 +16,6 @@ form.addEventListener('submit', event => {
     userAnswers.forEach((userAnswer, index) => {
         if (userAnswer === correctAnwers[index]) {
         score += 25
-        console.log('Acertou')
         }
     })
     console.log(score)
