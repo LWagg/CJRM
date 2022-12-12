@@ -7,6 +7,10 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const oddRandomNumbers = randomNumbers.filter(number => number % 2 === 1) 
+   
+console.log(oddRandomNumbers)
+
 /*
   02
 
@@ -14,6 +18,16 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+
+const numbersLesserThan501 = crazyNumbers.reduce((accumulator, number) => {
+  if (number < 501) {
+    accumulator++
+  }
+
+  return accumulator
+}, 0)
+
+console.log(numbersLesserThan501)
 
 /*
   03
@@ -23,6 +37,8 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+
+// continuar 7:28
 
 /*
   04
