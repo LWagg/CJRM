@@ -38,7 +38,9 @@ console.log(numbersLesserThan501)
 
 const numbers = [5, 7, 3]
 
-// continuar 7:28
+const squareRootNumbers = numbers.map(number => number ** 2)
+
+console.log(squareRootNumbers)
 
 /*
   04
