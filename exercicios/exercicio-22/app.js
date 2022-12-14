@@ -7,6 +7,9 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
+const sortedNames = names.map(item => item).sort()
+
+console.log(sortedNames, names)
 
 /*
   02
@@ -22,6 +25,13 @@ const characters = [
   { id: 01, name: 'Scar' },
   { id: 04, name: 'Mufasa' }
 ]
+
+const sortedCharacters = characters.map(item => item)
+  .sort((item2, item1) => item2.id - item1.id)
+
+console.log(sortedCharacters, characters)
+
+// Continuar 11:00
 
 /*
   03
