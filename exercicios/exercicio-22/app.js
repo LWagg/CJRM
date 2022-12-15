@@ -57,6 +57,10 @@ console.log(numbersCopy)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
+const firstNumberAbove50 = randomNumbers.find(number => number > 50)
+
+console.log(firstNumberAbove50)
+
 /*
   05
 
@@ -67,6 +71,13 @@ const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const peopleCopy = people.map(item => item)
+peopleCopy.sort()
+  .reverse()
+
+console.log(peopleCopy, people)
+
+
 /*
   06
   
@@ -76,6 +87,7 @@ const people = ['Cauã', 'Alfredo', 'Bruno']
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
+
 
 /*
   07
