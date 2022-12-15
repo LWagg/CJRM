@@ -88,6 +88,15 @@ console.log(peopleCopy, people)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
+const cookedIngredients = ingredients.reduce((acc, item, index, array) => {
+  if (index === array.length - 1) {
+    return acc += `${item} cozido`
+  }
+
+  return acc += `${item} cozido, `
+}, '')
+
+console.log(cookedIngredients)
 
 /*
   07
