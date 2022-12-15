@@ -26,12 +26,13 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const sortedCharacters = characters.map(item => item)
+
+const sortedCharacters = characters.map(item => ({id: item.id, name: item.name})) // Retornamos um objeto para que seja criado um novo, assim podemos alterar um ser modificar o outro, pois objetos são tipos de referência.
   .sort((item2, item1) => item2.id - item1.id)
 
 console.log(sortedCharacters, characters)
 
-// Continuar 11:00
+
 
 /*
   03
@@ -42,6 +43,11 @@ console.log(sortedCharacters, characters)
 */
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
+
+const numbersCopy = numbers.map(item => item)
+  .sort((item1, item2) => item1 - item2)
+
+console.log(numbersCopy)
 
 /*
   04
