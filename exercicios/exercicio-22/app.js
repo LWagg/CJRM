@@ -6,8 +6,11 @@
   - Exiba o array ordenado no console.
 */
 
+const getArrayCopy = array => array.map(item => item)
+
+
 const names = ['Caio', 'André', 'Dário']
-const sortedNames = names.map(item => item).sort()
+const sortedNames = getArrayCopy(names).sort()
 
 console.log(sortedNames, names)
 
@@ -44,7 +47,7 @@ console.log(sortedCharacters, characters)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numbersCopy = numbers.map(item => item)
+const numbersCopy = getArrayCopy(numbers)
   .sort((item1, item2) => item1 - item2)
 
 console.log(numbersCopy)
@@ -71,7 +74,7 @@ console.log(firstNumberAbove50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = people.map(item => item)
+const peopleCopy = getArrayCopy(people)
 peopleCopy.sort()
   .reverse()
 
@@ -89,11 +92,14 @@ console.log(peopleCopy, people)
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
 const cookedIngredients = ingredients.reduce((acc, item, index, array) => {
+  const correctWordGender = item[item.length - 1] === 'a' ? 'cozida' : 'cozido'
+  // Outra forma de testar se a última letra é 'A', é inserindo uma regex (/a$)
+  
   if (index === array.length - 1) {
-    return acc += `${item} cozido`
+    return acc + `${item} ${correctWordGender}`
   }
 
-  return acc += `${item} cozido, `
+  return acc + `${item} ${correctWordGender}, `
 }, '')
 
 console.log(cookedIngredients)
@@ -105,7 +111,7 @@ console.log(cookedIngredients)
     assistiram apenas os filmes da Disney.
 */
 
-const topBrazilmovies = [
+const topBrazilMovies = [
   { title: 'Vingadores: Ultimato', peopleAmount: 19686119, distributedBy: 'Disney' },
   { title: 'Titanic', peopleAmount: 17050000, distributedBy: 'Paramount / 20th Century' },
   { title: 'O Rei Leão', peopleAmount: 16267649, distributedBy: 'Disney' },
@@ -117,6 +123,13 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
+
+const totalPeopleAmount = topBrazilMovies
+  .filter(({ distributedBy }) => distributedBy === 'Disney')
+  .reduce((acc, { peopleAmount }) => acc + peopleAmount, 0)
+
+console.log(totalPeopleAmount)
+
 
 /*
   08
@@ -138,12 +151,27 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
+const humanAgeDogs = pets
+  .filter(({ type }) => type === 'Dog')
+  .map(({name, age, gender, type}) => ({ name, age: age * 7, gender, type}))
+
+console.log(humanAgeDogs)
+
+
+
 /*
   09
   
-  - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
+  - Considerando o array topBrazilMovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
+
+const ul = document.querySelector('.list-group')
+const insertMoviesInUL = movie => {
+  ul.innerHTML += `<li>${movie.title}</li>`
+}
+
+topBrazilMovies.map(insertMoviesInUL)
 
 /*
   10
