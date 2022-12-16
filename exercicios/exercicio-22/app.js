@@ -10,9 +10,9 @@ const getArrayCopy = array => array.map(item => item)
 
 
 const names = ['Caio', 'André', 'Dário']
-const sortedNames = getArrayCopy(names).sort()
+const namesInAlphabeticalOrder = getArrayCopy(names).sort()
 
-console.log(sortedNames, names)
+console.log(namesInAlphabeticalOrder, names)
 
 /*
   02
@@ -30,11 +30,12 @@ const characters = [
 ]
 
 
-const sortedCharacters = characters.map(item => ({id: item.id, name: item.name})) // Retornamos um objeto para que seja criado um novo, assim podemos alterar um ser modificar o outro, pois objetos são tipos de referência.
+const charactersOrderedById = characters
+  .map(({ id, name }) => ({ id, name })) /* Retornamos um objeto para que seja criado um novo, assim podemos alterar um ser modificar o outro, 
+    pois objetos são tipos de referência. */
   .sort((item2, item1) => item2.id - item1.id)
 
-console.log(sortedCharacters, characters)
-
+console.log(charactersOrderedById, characters)
 
 
 /*
@@ -47,10 +48,10 @@ console.log(sortedCharacters, characters)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numbersCopy = getArrayCopy(numbers)
+const numbersInAscendingOrder = getArrayCopy(numbers)
   .sort((item1, item2) => item1 - item2)
 
-console.log(numbersCopy)
+console.log(numbersInAscendingOrder)
 
 /*
   04
@@ -59,8 +60,8 @@ console.log(numbersCopy)
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
-
-const firstNumberAbove50 = randomNumbers.find(number => number > 50)
+const firstNumberAbove50 = randomNumbers
+  .find(number => number > 50)
 
 console.log(firstNumberAbove50)
 
@@ -73,12 +74,11 @@ console.log(firstNumberAbove50)
 */
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
-
-const peopleCopy = getArrayCopy(people)
-peopleCopy.sort()
+const peopleInDescendingOrder = getArrayCopy(people)
+  .sort()
   .reverse()
 
-console.log(peopleCopy, people)
+console.log(peopleInDescendingOrder, people)
 
 
 /*
@@ -94,12 +94,11 @@ const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 const cookedIngredients = ingredients.reduce((acc, item, index, array) => {
   const correctWordGender = item[item.length - 1] === 'a' ? 'cozida' : 'cozido'
   // Outra forma de testar se a última letra é 'A', é inserindo uma regex (/a$)
-  
-  if (index === array.length - 1) {
-    return acc + `${item} ${correctWordGender}`
-  }
+  const isLastItem = index === array.length - 1
+  const ingredientMessage = acc + `${item} ${correctWordGender}`
 
-  return acc + `${item} ${correctWordGender}, `
+  return isLastItem ? ingredientMessage : `${ingredientMessage}, `
+ 
 }, '')
 
 console.log(cookedIngredients)
@@ -153,7 +152,7 @@ const pets = [
 
 const humanAgeDogs = pets
   .filter(({ type }) => type === 'Dog')
-  .map(({name, age, gender, type}) => ({ name, age: age * 7, gender, type}))
+  .map(({ name, age, gender, type }) => ({ name, age: age * 7, gender, type}))
 
 console.log(humanAgeDogs)
 
@@ -167,8 +166,8 @@ console.log(humanAgeDogs)
 */
 
 const ul = document.querySelector('.list-group')
-const insertMoviesInUL = movie => {
-  ul.innerHTML += `<li>${movie.title}</li>`
+const insertMoviesInUL = ({ title }) => {
+  ul.innerHTML += `<li>${title}</li>`
 }
 
 topBrazilMovies.map(insertMoviesInUL)
