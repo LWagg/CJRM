@@ -6,6 +6,7 @@
 */
 
 const myString = '    JS      '
+console.log(myString.trim())
 
 /*
   02
@@ -23,6 +24,13 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
+const orderedPeopleByScore = people
+  .map(({ firstName, lastName, score }) => ({firstName, lastName, score}))
+  .sort((item1, item2) => item1.score - item2.score
+)
+
+console.log(orderedPeopleByScore, people)
+
 /*
   03
 
@@ -35,6 +43,10 @@ const people = [
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 
+const threeLetterAnimals = animals.filter(animal => animal.length === 3)
+
+console.log(threeLetterAnimals)
+
 /*
   04
 
@@ -42,7 +54,9 @@ const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
+const letterCountAnimals = animals.map(animal => animal.length)
 
+console.log(letterCountAnimals)
 
 /*
   05
@@ -60,6 +74,11 @@ const friends = [
   { id: 5, name: 'Solange', nearMe: false }
 ]
 
+const nearFriends = friends
+  .filter(({nearMe}) => nearMe)
+  .map(({name}) => name)
+
+console.log(nearFriends, friends)
 
 
 /*
@@ -70,6 +89,12 @@ const friends = [
 */
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
+
+const oddNumbers = numbers
+  .filter(number => number % 2)
+  .reduce((acc, oddNumber) => acc + oddNumber, 0)
+
+console.log(oddNumbers)
 
 /*
   07
@@ -91,3 +116,5 @@ const data = [{
   country: 'Indonesia',
   population: 263991379
 }]
+
+const 
