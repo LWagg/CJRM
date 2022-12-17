@@ -1,5 +1,6 @@
 const formAddToDo = document.querySelector('.form-add-todo')
 const toDosContainer = document.querySelector('.todos-container')
+const inputSearchToDo = document.querySelector('.form-search input')
 
 formAddToDo.addEventListener('submit', event => {
     event.preventDefault()
@@ -22,3 +23,14 @@ toDosContainer.addEventListener('click', event => {
         clickedElement.parentElement.remove()
     }
 })
+
+inputSearchToDo.addEventListener('input', event => {
+    const inputValue = event.target.value.trim()
+    const filteredLis = Array.from(toDosContainer.children).filter(toDo => {
+        return toDo.textContent.includes(inputValue)
+    })
+
+    console.log(filteredLis)
+})
+
+// Continuar 10:00
