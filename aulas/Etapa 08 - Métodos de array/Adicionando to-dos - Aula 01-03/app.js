@@ -25,12 +25,18 @@ toDosContainer.addEventListener('click', event => {
 })
 
 inputSearchToDo.addEventListener('input', event => {
-    const inputValue = event.target.value.trim()
-    const filteredLis = Array.from(toDosContainer.children).filter(toDo => {
-        return toDo.textContent.includes(inputValue)
-    })
-
-    console.log(filteredLis)
+    const inputValue = event.target.value.trim().toLowerCase()
+    Array.from(toDosContainer.children)
+        .filter(toDo => !toDo.textContent.toLowerCase().includes(inputValue))
+        .forEach(toDo => {
+            toDo.classList.remove('d-flex')
+            toDo.classList.add('hidden')
+        }) 
+    Array.from(toDosContainer.children)
+        .filter(toDo => toDo.textContent.toLowerCase().includes(inputValue))
+        .forEach(toDo => {
+            toDo.classList.remove('hidden')
+            toDo.classList.add('d-flex')
+        }) 
 })
 
-// Continuar 10:00
