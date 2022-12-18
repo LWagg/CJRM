@@ -2,26 +2,38 @@ const formAddToDo = document.querySelector('.form-add-todo')
 const toDosContainer = document.querySelector('.todos-container')
 const inputSearchToDo = document.querySelector('.form-search input')
 
-formAddToDo.addEventListener('submit', event => {
-    event.preventDefault()
-
-    const inputValue = event.target.add.value.trim()
+const addToDo = inputValue => {
     if (inputValue.length) {
         toDosContainer.innerHTML += `
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between align-items-center" data-todo="${inputValue}">
             <span>${inputValue}</span>
-            <i class="far fa-trash-alt delete"></i>
+            <i class="far fa-trash-alt" data-trash="${inputValue}"></i>
         </li>`
 
         event.target.reset()
     }
+}
+
+formAddToDo.addEventListener('submit', event => {
+    event.preventDefault()
+
+    const inputValue = event.target.add.value.trim()
+    addToDo(inputValue)
 })
+
+const removeToDo = clickedElement => {
+    const trashDataValue = clickedElement.dataset.trash
+    const todo = document.querySelector(`[data-todo="${trashDataValue}"]`)
+
+    if (trashDataValue) {
+        todo.remove()
+    }
+}
+
 
 toDosContainer.addEventListener('click', event => {
     const clickedElement = event.target
-    if (Array.from(clickedElement.classList).includes('delete')) {
-        clickedElement.parentElement.remove()
-    }
+    removeToDo(clickedElement)
 })
 
 inputSearchToDo.addEventListener('input', event => {
@@ -39,4 +51,6 @@ inputSearchToDo.addEventListener('input', event => {
             toDo.classList.add('d-flex')
         }) 
 })
+
+// 13: 50
 

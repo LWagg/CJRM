@@ -27,6 +27,7 @@ console.log(numbers.includes(635))
   estado em que ele está agora, se necessário.
 */
 
+
 /*
   03
 
@@ -41,6 +42,12 @@ console.log(numbers.includes(635))
     
     Dica: pesquise por dataset e atributos data.
 */
+
+
+
+
+
+
 
 /*
   04
