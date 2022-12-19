@@ -1,41 +1,24 @@
-// exemplo 1: ordenando string
+const past = new Date('May 1 2020 7:47:00')
+const present = new Date()
 
-const names = ['Christian', 'Alfredo', 'Edson']
+const difference = present.getTime() - past.getTime()
+console.log(difference)
 
-names.sort()
+const seconds = Math.round(difference / 1000)
+console.log({seconds})
 
-console.log(names)
+const minutes = Math.round(seconds / 60)
+console.log({minutes})
 
-// exemplo 2: ordenando números
+const hours = Math.round(minutes / 60)
+console.log({hours})
 
-const scores = [10, 50, 20, 5, 35, 70, 45]
+const days = Math.round(hours / 24)
+console.log({days})
 
-scores.sort((score1, score2) => score1 - score2)
+console.log(`Se passaram ${days} dias desde 01/05/2020`)
 
-console.log(scores)
+/* A conta acima refere-se à quantos milisegundos, segundos, minutos, horas e dias se passaram desde o dia passado como parâmetro do objeto Date até o dia atual.*/
 
-//exemplo 3: ordenando objetos
-
-const theBigFamily = [
-  { name: 'Lineu', score: 20 },
-  { name: 'Nenê', score: 10 },
-  { name: 'Tuco', score: 50 },
-  { name: 'Bebel', score: 30 },
-  { name: 'Agostinho', score: 70 }
-]
-
-// theBigFamily.sort((item1, item2) => {
-//   if (item1.score > item2.score) {
-//     return -1
-//   } else if (item2.score > item1.score) {
-//     return 1
-//   }
-
-//   return 0
-// })
-
-
-
-theBigFamily.sort((item1, item2) => item2.score - item1.score)
-
-console.log(theBigFamily)
+const timeStamp = 1675938474990
+console.log(new Date(1675938474990))
