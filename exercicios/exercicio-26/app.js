@@ -6,11 +6,22 @@
   - Não utilize a date-fns.
 */
 
+const present = new Date(`24 December 1995 14:00:00`)
 
 
-const formatDate = () => {
+const formatDate = date => {
+  const day = date.getDate()
+  const month = date.getMonth()
+  const year = date.getFullYear()
 
+  let dayFormat = String(day).length === 1 ? `0${day}` : `${day}`
+  let monthFormat = String(month).length === 1 ? `0${month + 1}` : `${month + 1}`
+
+  return `${dayFormat}/${monthFormat}/${year}`
+  
 }
+
+console.log(formatDate(present))
 
 
 /*
@@ -83,7 +94,7 @@ const updateSomething = (data = {}) => {
   })
 }
 
-updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
+// updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 
 /*
   07
