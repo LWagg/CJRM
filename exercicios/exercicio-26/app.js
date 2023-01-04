@@ -6,18 +6,16 @@
   - Não utilize a date-fns.
 */
 
-const present = new Date(`24 December 1995 14:00:00`)
+const present = new Date()
 
+const dateFormat = value => String(value).length === 1 ? `0${value}` : `${value}`
 
 const formatDate = date => {
   const day = date.getDate()
-  const month = date.getMonth()
+  const month = date.getMonth() + 1
   const year = date.getFullYear()
 
-  let dayFormat = String(day).length === 1 ? `0${day}` : `${day}`
-  let monthFormat = String(month).length === 1 ? `0${month + 1}` : `${month + 1}`
-
-  return `${dayFormat}/${monthFormat}/${year}`
+  return `${dateFormat(day)}/${dateFormat(month)}/${year}`
   
 }
 
@@ -31,6 +29,24 @@ console.log(formatDate(present))
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
+
+
+const dateAndHour = date => {
+  const hour = date.getHours()
+  const minutes = date.getMinutes()
+  const day = date.getDate()
+  const getWeekDay = date.getDay()
+  const getYearMonth = date.getMonth()
+  const year = date.getFullYear()
+
+  const weekDays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+  const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+
+  return `${dateFormat(hour)}:${dateFormat(minutes)} - ${weekDays[getWeekDay]}, ${dateFormat(day)} de ${months[getYearMonth]} de ${year}`
+}
+
+console.log(dateAndHour(present))
+
 
 /*
   03
