@@ -11,11 +11,11 @@ const present = new Date()
 const dateFormat = value => String(value).length === 1 ? `0${value}` : `${value}`
 
 const formatDate = date => {
-  const day = date.getDate()
-  const month = date.getMonth() + 1
+  const day = dateFormat(date.getDate())
+  const month = dateFormat(date.getMonth() + 1)
   const year = date.getFullYear()
 
-  return `${dateFormat(day)}/${dateFormat(month)}/${year}`
+  return `${day}/${month}/${year}`
   
 }
 
@@ -30,19 +30,40 @@ console.log(formatDate(present))
   - Não utilize a date-fns.
 */
 
+const weekDays = [
+'Domingo', 
+'Segunda-feira', 
+'Terça-feira', 
+'Quarta-feira', 
+'Quinta-feira', 
+'Sexta-feira', 
+'Sábado'
+]
+
+const months = [
+'Janeiro', 
+'Fevereiro', 
+'Março', 
+'Abril', 
+'Maio', 
+'Junho', 
+'Julho', 
+'Agosto', 
+'Setembro', 
+'Outubro', 
+'Novembro', 
+'Dezembro'
+]
 
 const dateAndHour = date => {
-  const hour = date.getHours()
-  const minutes = date.getMinutes()
-  const day = date.getDate()
-  const getWeekDay = date.getDay()
-  const getYearMonth = date.getMonth()
+  const hour = dateFormat(date.getHours())
+  const minutes = dateFormat(date.getMinutes())
+  const day = dateFormat(date.getDate())
+  const getWeekDay = weekDays[date.getDay()]
+  const getYearMonth = months[date.getMonth()]
   const year = date.getFullYear()
 
-  const weekDays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
-  const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-
-  return `${dateFormat(hour)}:${dateFormat(minutes)} - ${weekDays[getWeekDay]}, ${dateFormat(day)} de ${months[getYearMonth]} de ${year}`
+  return `${hour}:${minutes} - ${getWeekDay}, ${day} de ${getYearMonth} de ${year}`
 }
 
 console.log(dateAndHour(present))
@@ -108,20 +129,12 @@ const useDataSomewhereElse = value => {
   console.log(value)
 }
 
-const updateSomething = (data = {}) => {
-  const target = data.target
-  const property = data.property
-  let willChange = data.willChange
-
+const updateSomething = ({ target, property, willChange } = {}) => {
   if (willChange === 'valor indesejado') {
     willChange = 'valor desejado'
   }
 
-  useDataSomewhereElse({
-    target: target,
-    property: property,
-    willChange: willChange
-  })
+  useDataSomewhereElse({target, property,willChange})
 }
 
 updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
@@ -135,19 +148,19 @@ updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 
 const clockContainer = document.querySelector('.clock-container')
 
-const updateClock = () => {
-  const present = new Date()
-  const hours = present.getHours()
-  const minutes = present.getMinutes()
-  const seconds = present.getSeconds()
-
-  const clockHTML = `
-    <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> :
-    <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> :
-    <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
+const getClockHTML = (hours, minutes, seconds) => `
+    <span>${hours}</span> :
+    <span>${minutes}</span> :
+    <span>${seconds}</span>
   `
 
-  clockContainer.innerHTML = clockHTML
+const updateClock = () => {
+  const present = new Date()
+  const hours = dateFormat(present.getHours())
+  const minutes = dateFormat(present.getMinutes())
+  const seconds = dateFormat(present.getSeconds())
+
+  clockContainer.innerHTML = getClockHTML(hours, minutes, seconds)
 }
 
 setInterval(updateClock, 1000)
