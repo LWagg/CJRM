@@ -1,0 +1,3 @@
+/* 
+O JavaScript é síncrono por natureza, ou seja, ele executa linha após linha no que é chamado de single thread (fio único), sempre de cima para baixo. Quando precisamos acessar dados em um banco, essa operação pode durar alguns segundos e pode acabar travando a execução de outras operações. Pensando nessa "falha" do sincronismo, temos o assíncronismo, que isola essa parte do código que necessita fazer a operação em um banco para continuar a execução de todo o código e nos entregar os dados sem travar a aplicação. 
+*/
