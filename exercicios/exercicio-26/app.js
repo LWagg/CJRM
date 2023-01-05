@@ -57,6 +57,10 @@ console.log(dateAndHour(present))
 */
 
 const user = { id: 42, isVerified: true }
+const { id , isVerified } = user
+
+console.log(id, isVerified)
+
 
 /*
   04
@@ -71,6 +75,11 @@ const user = { id: 42, isVerified: true }
 const robotA = { name: 'Bender' }
 const robotB = { name: 'HAL 9000' }
 
+const { name: nameA} = robotA
+const { name: nameB} = robotB
+
+console.log(nameA, nameB)
+
 /*
   05
 
@@ -83,6 +92,11 @@ const robotB = { name: 'HAL 9000' }
 const a = 'a'
 const b = 'b'
 const c = 'c'
+
+const letters = {a, b, c}
+
+console.log(letters)
+
 
 /*
   06
@@ -110,7 +124,7 @@ const updateSomething = (data = {}) => {
   })
 }
 
-// updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
+updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 
 /*
   07
