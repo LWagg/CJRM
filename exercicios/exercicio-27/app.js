@@ -122,5 +122,9 @@ let booksBox = {
   booksIn: 0
 }
 
+booksBox.addBooks = (addBook = 0) => {
 
+
+
+}
 
