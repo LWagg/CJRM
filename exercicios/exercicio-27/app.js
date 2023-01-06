@@ -4,19 +4,19 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
-console.log('Linha 1')
-console.log('Linha 2')
-console.log('Linha 3')
-console.log('Linha 4')
+// console.log('Linha 1')
+// console.log('Linha 2')
+// console.log('Linha 3')
+// console.log('Linha 4')
 
-setTimeout(() => {
-  console.log('Função de callback executada')
-}, 2000)
+// setTimeout(() => {
+//   console.log('Função de callback executada')
+// }, 2000)
 
-console.log('Linha 5')
-console.log('Linha 6')
-console.log('Linha 7')
-console.log('Linha 8')
+// console.log('Linha 5')
+// console.log('Linha 6')
+// console.log('Linha 7')
+// console.log('Linha 8')
 
 /*
   02
@@ -31,7 +31,7 @@ function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
 
-logName(logGreeting)
+// logName(logGreeting)
 
 /*
   03
@@ -45,7 +45,7 @@ const getLessThanFive = num => num < 5
 
 const lesserThanFive = numbers.filter(getLessThanFive)
 
-console.log(lesserThanFive)
+// console.log(lesserThanFive)
 
 /*
   04
@@ -54,11 +54,10 @@ console.log(lesserThanFive)
 */
 
 const prices = [12, 19, 7, 209]
-let totalPrice = 0
 
-for (let i = 0; i < prices.length; i++) {
-  totalPrice += prices[i]
-}
+const sumPrices = (acc, price) => acc + price
+
+const totalPrice = prices.reduce(sumPrices, 0)
 
 // console.log(`Preço total: ${totalPrice}`)
 
@@ -71,6 +70,10 @@ for (let i = 0; i < prices.length; i++) {
 
 let car = { color: 'amarelo' }
 
+car['color'] = 'azul'
+
+// console.log(car['color'])
+
 /*
   06
 
@@ -80,6 +83,17 @@ let car = { color: 'amarelo' }
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
+
+const getThreeParameters = (param1, param2, param3) => {
+  const hasLessThanThreeParameter = [param1, param2, param3].includes(undefined)
+  
+  return hasLessThanThreeParameter 
+    ? 'A função deve ser invocada com 3 argumentos' 
+    :  'A função foi invocada com 3 argumentos'
+
+}
+
+// console.log(getThreeParameters([], [], []))
 
 /*
   07
@@ -107,3 +121,6 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
+
+
+
