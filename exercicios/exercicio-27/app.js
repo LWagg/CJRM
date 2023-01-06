@@ -9,7 +9,9 @@ console.log('Linha 2')
 console.log('Linha 3')
 console.log('Linha 4')
 
-
+setTimeout(() => {
+  console.log('Função de callback executada')
+}, 2000)
 
 console.log('Linha 5')
 console.log('Linha 6')
@@ -23,11 +25,13 @@ console.log('Linha 8')
     "logGreeting" ser exibida no console.
 */
 
+const logName = callback => callback('Wagner') 
+
 function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
 
-// x(logGreeting)
+logName(logGreeting)
 
 /*
   03
@@ -35,8 +39,11 @@ function logGreeting (name) {
   - O código abaixo possui uma parte que pode ser isolada. Isole-a.
 */
 
+
 const numbers = [3, 4, 10, 20]
-const lesserThanFive = numbers.filter(num => num < 5)
+const getLessThanFive = num => num < 5
+
+const lesserThanFive = numbers.filter(getLessThanFive)
 
 console.log(lesserThanFive)
 
@@ -53,7 +60,7 @@ for (let i = 0; i < prices.length; i++) {
   totalPrice += prices[i]
 }
 
-console.log(`Preço total: ${totalPrice}`)
+// console.log(`Preço total: ${totalPrice}`)
 
 /*
   05
