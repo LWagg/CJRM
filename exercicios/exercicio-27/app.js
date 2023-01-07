@@ -122,9 +122,42 @@ let booksBox = {
   booksIn: 0
 }
 
+const checkSingularOrPlural = (quantity, singular, plural) => 
+  quantity === 1 ? singular : plural
+
+const setSingularOrPluralMessage = (spaces, booksIn) => {
+  const availableSpace = spaces - booksIn
+  const bookSingularOrPlural = 
+      checkSingularOrPlural(availableSpace, 'livro', 'livros')
+  const singularOrPlural = 
+      checkSingularOrPlural(availableSpace,'cabe', 'cabem')
+    
+  return `Só ${singularOrPlural} mais ${availableSpace} ${bookSingularOrPlural}.`
+}
+
 booksBox.addBooks = (addBook = 0) => {
+  const { spaces } = booksBox
+  const filledSpace = booksBox.booksIn === spaces
 
+  if (filledSpace) {
+    return `Temos ${booksBox.booksIn} livros. A caixa já está cheia.`
+  }
 
+  const hasNoSpace = booksBox.booksIn + addBook > spaces
+
+  if (hasNoSpace) {
+   return setSingularOrPluralMessage(spaces, booksBox.booksIn)
+  }
+
+  booksBox.booksIn += addBook
+
+  const bookSingularOrPlural = checkSingularOrPlural(booksBox.booksIn, 'livro', 'livros') 
+
+  return `Temos ${booksBox.booksIn} ${bookSingularOrPlural} na caixa.`
 
 }
+
+console.log(booksBox.addBooks())
+
+console.log(booksBox)
 
