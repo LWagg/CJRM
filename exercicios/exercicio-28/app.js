@@ -16,6 +16,23 @@
   - Teste também a verificação do item acima.
 */
 
+// const request = new XMLHttpRequest()
+
+// request.addEventListener('readystatechange', () => {
+//   if (request.readyState === 4 && request.status === 200) {
+//     console.log(request.responseText)
+//     return 
+//   }
+
+//   if (request.readyState === 4) {
+//     console.log('Não foi possível obter os dados do pokémon')
+//   }
+// })
+
+// request.open('GET', 'https://pokeapi.co/api/v2/pokemon/pikachu')
+// request.send()
+
+
 /*
   02
 
@@ -31,6 +48,19 @@
     - Quantos metros você caminhou (number iniciado em 0).
 */
 
+let personInfo = {
+  name: 'Wagner',
+  lastName: 'Leite',
+  gender: 'M',
+  age: 30,
+  height: 1.79,
+  weigth: 92,
+  isWalking: false,
+  metersWalked: 0
+}
+
+console.log(personInfo)
+
 /*
   03
 
@@ -39,6 +69,15 @@
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
+
+personInfo.increaseAge = () => personInfo.age++
+
+for (let i = 0; i < 5; i++) {
+  personInfo.increaseAge()
+}
+
+console.log(personInfo.age)
+
 
 /*
   04
@@ -50,6 +89,20 @@
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+
+personInfo.startWalking = meters => {
+  personInfo.isWalking = true
+  personInfo.metersWalked += meters
+}
+
+const meters = [6, 9, 10, 5]
+
+meters.forEach(meter => {
+  personInfo.startWalking(meter)
+})
+
+console.log(personInfo)
+
 
 /*
   05
