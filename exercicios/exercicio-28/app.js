@@ -97,9 +97,11 @@ personInfo.startWalking = meters => {
 
 const meters = [6, 9, 10, 5]
 
-meters.forEach(meter => {
+const setMetersWalked = meter => {
   personInfo.startWalking(meter)
-})
+}
+
+meters.forEach(setMetersWalked)
 
 console.log(personInfo)
 
@@ -121,6 +123,24 @@ console.log(personInfo)
       "metro", no singular.
 */
 
+const getPluralOrSingular = (property, singular, plural) => property === 1 ? singular : plural
+
+personInfo.attributesMessage = () => {
+  const verifyGender = personInfo.gender === 'M' ? 'o' : 'a'
+  const agePluralOrSingular = 
+    getPluralOrSingular(personInfo.age, 'ano', 'anos')
+  const walkedMetersPluralOrSingular = 
+    getPluralOrSingular(personInfo.metersWalked, 'metro', 'metros')
+  const heigthMetersPluralOrSingular = 
+    getPluralOrSingular(personInfo.height, 'metro', 'metros')
+
+  
+  return `Oi. Eu sou ${verifyGender} ${personInfo.name} ${personInfo.lastName}, tenho ${personInfo.age} ${agePluralOrSingular}, ${personInfo.height} ${heigthMetersPluralOrSingular} de altura, peso ${personInfo.weigth} quilos e, só hoje, eu já caminhei ${personInfo.metersWalked} ${walkedMetersPluralOrSingular}.`
+}
+
+console.log(personInfo.attributesMessage())
+
+
 /*
   06
 
@@ -132,6 +152,10 @@ console.log(personInfo)
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
+
+
+
+
 
 /*
   07
