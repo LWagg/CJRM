@@ -16,21 +16,24 @@
   - Teste também a verificação do item acima.
 */
 
-// const request = new XMLHttpRequest()
+const request = new XMLHttpRequest()
 
-// request.addEventListener('readystatechange', () => {
-//   if (request.readyState === 4 && request.status === 200) {
-//     console.log(request.responseText)
-//     return 
-//   }
+request.addEventListener('readystatechange', () => {
+  const isRequestOk = request.readyState === 4 && request.status === 200
+  const isRequestNotOk = request.readyState === 4
+  
+  if (isRequestOk) {
+    console.log(request.responseText)
+    return 
+  }
 
-//   if (request.readyState === 4) {
-//     console.log('Não foi possível obter os dados do pokémon')
-//   }
-// })
+  if (isRequestNotOk) {
+    console.log('Não foi possível obter os dados do pokémon')
+  }
+})
 
-// request.open('GET', 'https://pokeapi.co/api/v2/pokemon/pikachu')
-// request.send()
+request.open('GET', 'https://pokeapi.co/api/v2/pokemon/pikachu')
+request.send()
 
 
 /*
@@ -126,16 +129,19 @@ console.log(personInfo)
 const getPluralOrSingular = (property, singular, plural) => property === 1 ? singular : plural
 
 personInfo.attributesMessage = () => {
-  const verifyGender = personInfo.gender === 'M' ? 'o' : 'a'
+  const { name, lastName, gender, age, height , weigth ,metersWalked
+    } = personInfo
+
+  const verifyGender = gender === 'M' ? 'o' : 'a'
   const agePluralOrSingular = 
-    getPluralOrSingular(personInfo.age, 'ano', 'anos')
+    getPluralOrSingular(age, 'ano', 'anos')
   const walkedMetersPluralOrSingular = 
-    getPluralOrSingular(personInfo.metersWalked, 'metro', 'metros')
+    getPluralOrSingular(metersWalked, 'metro', 'metros')
   const heigthMetersPluralOrSingular = 
-    getPluralOrSingular(personInfo.height, 'metro', 'metros')
+    getPluralOrSingular(height, 'metro', 'metros')
 
   
-  return `Oi. Eu sou ${verifyGender} ${personInfo.name} ${personInfo.lastName}, tenho ${personInfo.age} ${agePluralOrSingular}, ${personInfo.height} ${heigthMetersPluralOrSingular} de altura, peso ${personInfo.weigth} quilos e, só hoje, eu já caminhei ${personInfo.metersWalked} ${walkedMetersPluralOrSingular}.`
+  return `Oi. Eu sou ${verifyGender} ${name} ${lastName}, tenho ${age} ${agePluralOrSingular}, ${height} ${heigthMetersPluralOrSingular} de altura, peso ${weigth} quilos e, só hoje, eu já caminhei ${metersWalked} ${walkedMetersPluralOrSingular}.`
 }
 
 console.log(personInfo.attributesMessage())
@@ -154,6 +160,16 @@ console.log(personInfo.attributesMessage())
 */
 
 
+const falsyValues = [undefined, null, NaN, 0 , '', false]
+const truthValues = ['Oi', 1, [1, 2], 'Wagner', true, '7', 'Jeh']
+
+const isAtruthyValue = value => Boolean(value)
+
+const isAFalsyValue = falsyValue => console.log(isAtruthyValue(falsyValue))
+const isATruthValue = truthValue => console.log(isAtruthyValue(truthValue))
+
+falsyValues.forEach(isAFalsyValue) 
+truthValues.forEach(isATruthValue)
 
 
 
@@ -175,3 +191,28 @@ console.log(personInfo.attributesMessage())
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
+
+const getBook = bookName => {
+  const books = {
+    'Pai Rico, Pai Pobre': {
+      pages: 100,
+      author: 'Robert Kiyosaki',
+      press: 'Alta Books'
+    },
+    'O Escaravelho Do Diabo': {
+      pages: 115,
+      author: 'Lúcia Machado de Almeida',
+      press: 'Editora Ática'
+    },
+    'O Gigante De Botas': {
+      pages: 124,
+      author: 'Ofélia Fontes',
+      press: 'Leuzinger'
+    }
+  }
+
+  return books[bookName] || books
+}
+
+console.log(getBook())
+
