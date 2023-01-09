@@ -19,7 +19,7 @@ const getToDos = callback => {
     request.send()
 }
 
-getToDos((error, data) => {
+const myCallback = (error, data) => {
     console.log('Callback executado')
    
     if(error) {
@@ -28,7 +28,11 @@ getToDos((error, data) => {
     }
 
     console.log(data)
-})
+}
+
+getToDos(myCallback)
+
+
 
 
 
