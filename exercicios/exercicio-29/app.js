@@ -13,12 +13,40 @@
       executado quando o request anterior for finalizado.
 */
 
-const getToDos = () => {
+const getPokemon = (url, callback) => {
   const request = new XMLHttpRequest()
+  
+  request.addEventListener('readystatechange', () => {
+    const isRequestOK = request.readyState === 4 && request.status === 200
+    const isRequestNotOK = request.readyState === 4
+  
+    if (isRequestOK) {
+      const data = JSON.parse(request.responseText)
+      callback(null, data)
+      return
+    }
+
+    if(isRequestNotOK) {
+      callback(`Não foi possível obter o Pokémon`, null)
+    }
+  
+  })
+  
+  request.open('GET', url)
+  request.send()
 
 }
 
+const logPokemonData = (error, data) => error ? console.log(error) : console.log(`Pokémon obtido: ${data.name}`)
+const urlPokemon = id => `https://pokeapi.co/api/v2/pokemon/${id}`
 
+getPokemon( urlPokemon(1), (error, data) => {
+  logPokemonData(error, data)
+  getPokemon( urlPokemon(4), (error, data) => {
+    logPokemonData(error, data)
+    getPokemon( urlPokemon(7), logPokemonData)
+  })
+})
 
 
 /*
@@ -80,7 +108,7 @@ const getFullName = (user) => {
   return `${firstName} ${lastName}`
 }
 
-console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
+// console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
 
 /*
   06
