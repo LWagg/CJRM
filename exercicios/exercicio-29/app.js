@@ -37,16 +37,23 @@ const getPokemon = (url, callback) => {
 
 }
 
-const logPokemonData = (error, data) => error ? console.log(error) : console.log(`Pokémon obtido: ${data.name}`)
-const urlPokemon = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+const logPokemonData = (error, data) => error 
+  ? console.log(error) 
+  : console.log(`Pokémon obtido: ${data.name}`)
 
-getPokemon( urlPokemon(1), (error, data) => {
-  logPokemonData(error, data)
-  getPokemon( urlPokemon(4), (error, data) => {
-    logPokemonData(error, data)
-    getPokemon( urlPokemon(7), logPokemonData)
-  })
-})
+const getPokemonUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+
+const bulbasaur = getPokemonUrl(1)
+const charmander = getPokemonUrl(4)
+const squirtle = getPokemonUrl(7)
+
+// getPokemon(bulbasaur, (error, data) => {
+//   logPokemonData(error, data)
+//   getPokemon( charmander, (error, data) => {
+//     logPokemonData(error, data)
+//     getPokemon( squirtle, logPokemonData)
+//   })
+// })
 
 
 /*
@@ -68,6 +75,22 @@ getPokemon( urlPokemon(1), (error, data) => {
     2) Pesquisar no MDN.
 */
 
+const map = (array, func) => {
+  let newArray = []
+
+  const addItemToNewArray = item => { 
+    const newItem = func(item)
+    newArray.push(newItem)
+  }
+  
+  array.forEach(addItemToNewArray)
+
+  return newArray
+}
+
+console.log(map([1, 2, 3], number => number * 2))
+
+
 /*
   03
 
@@ -77,10 +100,12 @@ getPokemon( urlPokemon(1), (error, data) => {
 
 const person = {
   name: 'Roger',
-  getName: () => this.name
+  getName () {
+    return this.name
+  } 
 }
 
-// console.log(person.getName())
+console.log(person.getName())
 
 /*
   04
@@ -92,7 +117,13 @@ const person = {
 */
 
 const x = 'x'
-// const x = 'y'
+const secondX = () => {
+  const x = 'y'
+  return x
+}
+
+console.log(x)
+console.log(secondX())
 
 /*
   05
