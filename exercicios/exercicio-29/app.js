@@ -13,6 +13,14 @@
       executado quando o request anterior for finalizado.
 */
 
+const getToDos = () => {
+  const request = new XMLHttpRequest()
+
+}
+
+
+
+
 /*
   02
 
