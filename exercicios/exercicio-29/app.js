@@ -132,14 +132,9 @@ console.log(secondX())
     conseguir.
 */
 
-const getFullName = (user) => {
-  const firstName = user.firstName
-  const lastName = user.lastName
+const getFullName = ({ firstName, lastName }) => `${firstName} ${lastName}`
 
-  return `${firstName} ${lastName}`
-}
-
-// console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
+console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
 
 /*
   06
@@ -154,6 +149,36 @@ const getFullName = (user) => {
     a mensagem 'Não temos o equivalente hexadecimal para COR';
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
+
+
+    
+
+const convertToHex = colorName => {
+  const colors = {
+    red: '#ff0000',
+    blue: '#0000ff',
+    white: '#ffffff',
+    black: '000000',
+    green: '#00ff00'
+  }
+
+  return colors[colorName]
+    ? `O hexadecimal para a cor ${colorName} é ${colors[colorName]}.`
+    : `Não temos o equivalente hexadecimal para ${colorName}.`
+}
+
+const colors = [
+  'red',
+  'yellow',
+  'black',
+  'purple',
+  'white',
+  'blue',
+  'green',
+  'gray'
+]
+
+colors.forEach(color => console.log(convertToHex(color)))
 
 
 /*
@@ -179,3 +204,5 @@ const people = [
   { id: 9 , name: 'Gabriel', age: 20, federativeUnit: 'São Paulo' },
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
+
+
