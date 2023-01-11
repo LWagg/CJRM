@@ -205,4 +205,9 @@ const people = [
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
 
+const ageFrequency = people.reduce((acc, person) => {
+  acc[person.age] = acc[person.age] + 1 || 1 
+  return acc
+}, {})
 
+console.log(ageFrequency)
