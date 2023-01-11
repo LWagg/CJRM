@@ -178,7 +178,7 @@ const colors = [
   'gray'
 ]
 
-colors.forEach(color => console.log(convertToHex(color)))
+// colors.forEach(color => console.log(convertToHex(color)))
 
 
 /*
