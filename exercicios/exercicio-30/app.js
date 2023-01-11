@@ -31,8 +31,8 @@ request.send()
 })
 
 getUsers('https://jsonplaceholder.typicode.com/users')
-    .then(user => console.log(user))
-    .catch(error => console.log(error))
+    .then(console.log)
+    .catch(console.log)
 
 /*
   02
@@ -47,6 +47,11 @@ getUsers('https://jsonplaceholder.typicode.com/users')
     mensagem: "Resultado da operação: NUMERO_1 OPERADOR NUMERO_2 = RESULTADO."
   - Se o operador não for válido, retorne a mensagem "Operação inválida."
 */
+
+
+
+
+
 
 /*
   03
