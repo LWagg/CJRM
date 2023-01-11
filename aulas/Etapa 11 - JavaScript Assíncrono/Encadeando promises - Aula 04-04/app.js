@@ -28,8 +28,7 @@ getPokemon('https://pokeapi.co/api/v2/pokemon/1')
         console.log(charmander)
         return getPokemon('https://pokeapi.co/api/v2/pokemon/7')
     })
-    .then(squ)
-
+    .then(console.log)
     .catch(error => console.log(error))
 
 
