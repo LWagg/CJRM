@@ -164,6 +164,14 @@ const isCearaInBrasil = brasil.includes('Ceará')
   ? `Ceará está incluído.` 
   : `Ceará não foi incluído =/`
 
-console.log(isCearaInBrasil)
+const newBrasilIdAndStates = newBrasil.map(({id, estado}) => ({
+  id: id + 1, 
+  estado: `${estado} pertence ao Brasil`}))
+
+const statesWithEvenId = newBrasilIdAndStates.filter(({ id }) => id % 2 === 0)
+
+
+
+
 
 
