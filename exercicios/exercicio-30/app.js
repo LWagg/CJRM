@@ -48,8 +48,27 @@ getUsers('https://jsonplaceholder.typicode.com/users')
   - Se o operador não for válido, retorne a mensagem "Operação inválida."
 */
 
+const getOperationMessage = (num1, operator, num2, operation) => 
+  `Resultado da operação: ${num1} ${operator} ${num2} = ${operation}.`
 
+const calculator = operator => (num1, num2) => {
+  const operations = {
+    '+': getOperationMessage(num1, operator, num2, num1 + num2),
+    '-': getOperationMessage(num1, operator, num2, num1 - num2),
+    '*': getOperationMessage(num1, operator, num2, num1 * num2),
+    '/': getOperationMessage(num1, operator, num2, num1 / num2),
+    '%': getOperationMessage(num1, operator, num2, num1 % num2)
+  }
 
+  return operations[operator] || `Operação inválida.`
+}
+
+const sum = calculator('+')
+const subtraction = calculator('-')
+const test = calculator('oi')
+console.log(sum(5, 5))
+console.log(subtraction(8, 5))
+console.log(test(5, 2))
 
 
 
@@ -66,6 +85,21 @@ getUsers('https://jsonplaceholder.typicode.com/users')
   - Crie um novo array chamado `newSul`, que recebe somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
+
+const sul = ['Rio Grande do Sul', 'Santa Catarina', 'Paraná']
+const sudeste = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Espírito Santo']
+
+const brasil = sul.concat(sudeste)
+brasil.unshift('Acre', 'Pará', 'Roraima')
+const firstItemRemoved = brasil.shift()
+
+const newSul = brasil.slice(2, 5)
+
+console.log(firstItemRemoved)
+console.log(brasil)
+console.log(newSul)
+
+
 
 /*
   04
@@ -85,6 +119,8 @@ getUsers('https://jsonplaceholder.typicode.com/users')
     console: "Nem todos os estados tem mais de 7 letras.". Pesquise pelo método 
     every.
 */
+
+const nordeste = 
 
 /*
   05
