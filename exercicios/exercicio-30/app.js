@@ -135,6 +135,16 @@ const newSudeste = brasil.splice(5, 4)
 console.log(newSudeste)
 brasil = brasil.concat(nordeste)
 
+const newBrasil = brasil.map((item, index) => ({id: index, estado: item}))
+const hasMoreThanSevenLetters = brasil.every(item => item.length > 7)
+
+const message = hasMoreThanSevenLetters 
+  ? `Nem todos os estados tem mais de 7 letras.`
+  : `Nem todos os estados tem mais de 7 letras.`
+
+console.log(newBrasil)
+console.log(message)
+
 
 /*
   05
@@ -149,3 +159,11 @@ brasil = brasil.concat(nordeste)
   - Filtre o array criado acima, retornando somente os estados que tiverem ID 
     par. Atribua este novo array à uma constante.
 */
+
+const isCearaInBrasil = brasil.includes('Ceará') 
+  ? `Ceará está incluído.` 
+  : `Ceará não foi incluído =/`
+
+console.log(isCearaInBrasil)
+
+
