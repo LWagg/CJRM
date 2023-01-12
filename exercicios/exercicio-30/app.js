@@ -30,9 +30,9 @@ request.send()
 
 })
 
-getUsers('https://jsonplaceholder.typicode.com/users')
-    .then(console.log)
-    .catch(console.log)
+// getUsers('https://jsonplaceholder.typicode.com/users')
+//     .then(console.log)
+//     .catch(console.log)
 
 /*
   02
@@ -63,12 +63,12 @@ const calculator = operator => (num1, num2) => {
   return operations[operator] || `Operação inválida.`
 }
 
-const sum = calculator('+')
-const subtraction = calculator('-')
-const test = calculator('oi')
-console.log(sum(5, 5))
-console.log(subtraction(8, 5))
-console.log(test(5, 2))
+// const sum = calculator('+')
+// const subtraction = calculator('-')
+// const test = calculator('oi')
+// console.log(sum(5, 5))
+// console.log(subtraction(8, 5))
+// console.log(test(5, 2))
 
 
 
@@ -89,15 +89,15 @@ console.log(test(5, 2))
 const sul = ['Rio Grande do Sul', 'Santa Catarina', 'Paraná']
 const sudeste = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais', 'Espírito Santo']
 
-const brasil = sul.concat(sudeste)
+let brasil = sul.concat(sudeste)
 brasil.unshift('Acre', 'Pará', 'Roraima')
 const firstItemRemoved = brasil.shift()
 
 const newSul = brasil.slice(2, 5)
 
-console.log(firstItemRemoved)
-console.log(brasil)
-console.log(newSul)
+// console.log(firstItemRemoved)
+// console.log(brasil)
+// console.log(newSul)
 
 
 
@@ -120,7 +120,21 @@ console.log(newSul)
     every.
 */
 
-const nordeste = 
+const nordeste = [
+  'Maranhão',
+  'Piauí',
+  'Ceará',
+  'Rio Grande do Norte',
+  'Paraíba',
+  'Pernambuco',
+  'Alagoas',
+  'Sergipe',
+  'Bahia']
+
+const newSudeste = brasil.splice(5, 4)
+console.log(newSudeste)
+brasil = brasil.concat(nordeste)
+
 
 /*
   05
