@@ -50,6 +50,15 @@ console.log(getDivisibleByTwoOrThree(numbers))
     - Rafaela => "PRaPfaPePla".
 */
 
+const nameInSyllable = ['Wag', 'ner']
+
+const insertPBetweenSyllables = (acc, syllable) => `${acc}P${syllable}`
+
+const pBetweenSyllables = nameInSyllable.reduce(insertPBetweenSyllables, '')
+
+console.log(pBetweenSyllables)
+
+
 /*
   04
 
