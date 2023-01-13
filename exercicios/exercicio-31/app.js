@@ -16,7 +16,7 @@
  const logGitHubUser = async username =>
   console.log(await fetchGitHubUser(username))
  
-logGitHubUser('lwagg')
+// logGitHubUser('lwagg')
 
 
 /*
@@ -73,6 +73,19 @@ console.log(pBetweenSyllables)
 
   Dica: pesquise pelo método split.
 */
+
+const myName = 'Wagner'
+const myNameLetters = myName.split('')
+
+const logMessageNameLetters = (letter, index) => 
+  console.log(`"${letter}" é a ${index + 1}ª letra do meu nome`)
+
+myNameLetters.forEach(logMessageNameLetters)
+
+
+
+
+
 
 /*
   05
