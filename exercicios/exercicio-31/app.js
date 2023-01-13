@@ -8,6 +8,17 @@
     do GitHub.
 */
 
+ const fetchGitHubUser = async username => {
+    const response = await fetch(`https://api.github.com/users/${username}`)
+    return response.json()
+ }
+
+ const logGitHubUser = async username =>
+  console.log(await fetchGitHubUser(username))
+ 
+logGitHubUser('lwagg')
+
+
 /*
   02
 
