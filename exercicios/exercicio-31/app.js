@@ -80,11 +80,7 @@ const myNameLetters = myName.split('')
 const logMessageNameLetters = (letter, index) => 
   console.log(`"${letter}" é a ${index + 1}ª letra do meu nome`)
 
-myNameLetters.forEach(logMessageNameLetters)
-
-
-
-
+// myNameLetters.forEach(logMessageNameLetters)
 
 
 /*
@@ -100,6 +96,15 @@ myNameLetters.forEach(logMessageNameLetters)
   Dica: pesquise pelo método Object.keys().
 */
 
+const personInfo = {
+  name: 'Wagner',
+  lastName: 'Leite',
+  age: 30
+}
+
+console.log(Object.keys(personInfo))
+
+
 /*
   06
 
@@ -114,6 +119,24 @@ myNameLetters.forEach(logMessageNameLetters)
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
+
+const checkOccurrenceValue = (array, value) => {
+  let valueCount = 0
+  
+  for(let i = 0; i < array.length; i++) {
+    const valueIncludedInArray = array[i] === (value)
+    
+    if(valueIncludedInArray) {
+      valueCount++
+    }
+  } 
+
+  return valueCount
+}
+
+console.log(checkOccurrenceValue(scores, 100))
+
+
 
 /*
   07
@@ -138,3 +161,5 @@ const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
   Dica: lembre-se que o método filter inclui o item em questão no novo array 
   que está sendo gerado **apenas** se a função retorna um valor truthy.
 */
+
+
