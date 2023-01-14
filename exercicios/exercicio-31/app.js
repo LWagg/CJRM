@@ -162,4 +162,25 @@ console.log(checkOccurrenceValue(scores, 100))
   que está sendo gerado **apenas** se a função retorna um valor truthy.
 */
 
+const filter = (array, func) => {
+  let newArray = []
 
+  const filterItem = (item, index, array) => {
+    const itemShouldBeAdded = func(item, index, array)
+    
+    if(itemShouldBeAdded) {
+      newArray.push(item)
+    }
+
+  }
+
+  array.forEach(filterItem)
+  return newArray
+}
+
+console.log(filter([1, 2, 3], item => item))
+console.log(filter([0, 1, 2], item => item))
+console.log(filter([1, 2, 3], item => item < 2))
+console.log(filter([1, 2, 3, 5], (item, index) => item === index + 1))
+console.log(filter([1, 2, 3, 2, 1, 5], (item, index, array) =>
+  index === array.indexOf(item)))
