@@ -29,8 +29,8 @@ const getCityWeather = async cityName => {
             throw new error('Não foi possível obter os dados')
         }
 
-        const [cityData] = await response.json()
-        return cityData
+        const [cityWeatherData] = await response.json()
+        return cityWeatherData
     } catch ({name, message}) {
         alert(`${name}: ${message}`)
     }
