@@ -65,6 +65,11 @@ console.log(red, green, blue)
     - Faça a função retornar "Olá, meu nome é [NOME]!".
 */
 
+const greet = (obj, string) => {
+  const {[string]: name = 'desconhecido'} = obj
+  return `Olá, meu nome é ${name}!`
+}
+
 console.log(greet({ name: 'Roger' }, 'name'))
 console.log(greet({}, 'personName'))
 
